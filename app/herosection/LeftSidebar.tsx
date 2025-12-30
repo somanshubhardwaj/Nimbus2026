@@ -17,21 +17,23 @@ const LeftSidebar = ({ activeSection = 1 }: LeftSidebarProps) => {
   ];
 
   return (
-    <div className="fixed left-0 top-0 h-full w-[80px] z-50 flex flex-col justify-between items-center py-8 border-r border-white/20 bg-transparent text-white mix-blend-difference pointer-events-none">
+    <div className="fixed left-0 top-0 h-full w-[60px] z-50 flex flex-col items-center border-r-2 border-white/20 bg-transparent text-white mix-blend-difference pointer-events-none">
       {/* Top Menu Icon */}
-      <div className="flex flex-col gap-1.5 cursor-pointer pointer-events-auto">
-        <div className="w-6 h-0.5 bg-white"></div>
-        <div className="w-6 h-0.5 bg-white"></div>
-        <div className="w-6 h-0.5 bg-white"></div>
+      <div className="w-full py-8 flex flex-col items-center border-b border-white/20">
+        <div className="flex flex-col gap-1.5 cursor-pointer pointer-events-auto">
+          <div className="w-6 h-0.5 bg-white"></div>
+          <div className="w-6 h-0.5 bg-white"></div>
+          <div className="w-6 h-0.5 bg-white"></div>
+        </div>
       </div>
 
       {/* Vertical Text */}
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex-1 w-full flex items-center justify-center border-b border-white/20">
         <h2 
           className="whitespace-nowrap text-2xl tracking-[0.2em] font-bold rotate-180"
           style={{ 
             writingMode: 'vertical-rl',
-            fontFamily: 'Neoform, sans-serif'
+            fontFamily: 'BankGothic, sans-serif'
           }}
         >
           NIMBUS 2026
@@ -39,7 +41,7 @@ const LeftSidebar = ({ activeSection = 1 }: LeftSidebarProps) => {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="flex flex-col gap-4 text-xs font-mono tracking-widest opacity-80 pointer-events-auto">
+      <div className="w-full py-8 flex flex-col items-center gap-4 text-xs tracking-widest opacity-80 pointer-events-auto" style={{ fontFamily: 'BankGothic, sans-serif' }}>
         {items.map((item) => (
           <div 
             key={item.id} 

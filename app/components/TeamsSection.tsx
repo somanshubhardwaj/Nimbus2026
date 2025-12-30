@@ -78,14 +78,14 @@ const TeamsSection = () => {
 
   return (
     <div ref={containerRef} className="w-full relative bg-black" style={{ height: `${teams.length * 100}vh` }}>
-      <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden pl-[80px]">
+      <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden pl-[60px]">
       {/* Left: Number Indicator */}
       <div className="absolute left-10 top-10 z-10">
         <div className="flex items-end leading-none">
-          <span className="text-white text-[120px] font-thin tracking-tighter">
+          <span className="text-white text-[120px] tracking-tighter" style={{ fontFamily: 'BankGothic, sans-serif' }}>
             0{activeTeam.id}
           </span>
-          <span className="text-white/50 text-2xl mb-6 ml-2 font-mono">
+          <span className="text-white/50 text-2xl mb-6 ml-2" style={{ fontFamily: 'BankGothic, sans-serif' }}>
             /0{teams.length}
           </span>
         </div>
