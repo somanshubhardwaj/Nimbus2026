@@ -1,19 +1,21 @@
 'use client';
 
+import Link from 'next/link';
+
 interface LeftSidebarProps {
   activeSection?: number;
 }
 
 const LeftSidebar = ({ activeSection = 1 }: LeftSidebarProps) => {
   const items = [
-    { id: 1, label: 'HOME', default: '01/' },
-    { id: 2, label: 'GALLERY', default: '02/' },
-    { id: 3, label: 'RC RACE', default: '03/' },
-    { id: 4, label: '04', default: '04/' },
-    { id: 5, label: '05', default: '05/' },
-    { id: 6, label: '06', default: '06/' },
-    { id: 7, label: '07', default: '07/' },
-    { id: 8, label: '08', default: '08/' },
+    { id: 1, label: 'HOME', default: '01/', href: '#hero' },
+    { id: 2, label: 'GALLERY', default: '02/', href: '#gallery' },
+    { id: 3, label: 'PASS', default: '03/', href: '#pass' },
+    { id: 4, label: '04', default: '04/', href: '#' },
+    { id: 5, label: '05', default: '05/', href: '#' },
+    { id: 6, label: '06', default: '06/', href: '#' },
+    { id: 7, label: '07', default: '07/', href: '#' },
+    { id: 8, label: '08', default: '08/', href: '#' },
   ];
 
   return (
@@ -43,8 +45,9 @@ const LeftSidebar = ({ activeSection = 1 }: LeftSidebarProps) => {
       {/* Bottom Navigation */}
       <div className="w-full py-8 flex flex-col items-center gap-4 text-xs tracking-widest opacity-80 pointer-events-auto" style={{ fontFamily: 'BankGothic, sans-serif' }}>
         {items.map((item) => (
-          <div 
+          <Link 
             key={item.id} 
+            href={item.href}
             className="cursor-pointer hover:text-[#5227FF] transition-colors flex items-center justify-center min-h-[24px]" 
             style={{ writingMode: 'vertical-rl' }}
           >
@@ -53,7 +56,7 @@ const LeftSidebar = ({ activeSection = 1 }: LeftSidebarProps) => {
             ) : (
                <span className="rotate-180 whitespace-nowrap">{item.default}</span>
             )}
-          </div>
+          </Link>
         ))}
       </div>
     </div>

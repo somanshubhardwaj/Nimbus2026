@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Hero from "./herosection/Hero";
 import Gallery from "./components/Gallery";
+import TathvaPassSection from "./components/TathvaPassSection";
 import RCRaceSection from "./components/RCRaceSection";
 import LeftSidebar from "./herosection/LeftSidebar";
 
@@ -15,7 +16,7 @@ export default function Home() {
           if (entry.isIntersecting) {
             if (entry.target.id === 'hero') setActiveSection(1);
             if (entry.target.id === 'gallery') setActiveSection(2);
-            if (entry.target.id === 'rcrace') setActiveSection(3);
+            if (entry.target.id === 'pass') setActiveSection(3);
           }
         });
       },
@@ -37,8 +38,8 @@ export default function Home() {
       <section id="gallery" className="w-full">
         <Gallery />
       </section>
-      <section id="rcrace" className="w-full">
-        <RCRaceSection />
+      <section id="pass" className="w-full">
+        <TathvaPassSection />
       </section>
     </main>
   );
