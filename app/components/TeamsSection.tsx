@@ -52,17 +52,16 @@ const TeamsSection = () => {
   // Layout constants
   const IMAGE_HEIGHT = 350;
   const GAP = 32; // gap-8 = 32px
-  const CONTAINER_HEIGHT = 800;
   
   // Calculate vertical travel for images
-  // We want the active image to be centered in the container.
-  // Initial position (index 0): Top of first image is at (CONTAINER_HEIGHT - IMAGE_HEIGHT) / 2
-  // Final position (index N-1): Top of last image is at (CONTAINER_HEIGHT - IMAGE_HEIGHT) / 2
-  // The list moves up by (IMAGE_HEIGHT + GAP) for each step.
-  const initialOffset = (CONTAINER_HEIGHT - IMAGE_HEIGHT) / 2;
   const totalTravel = (teams.length - 1) * (IMAGE_HEIGHT + GAP);
   
-  const y = useTransform(scrollYProgress, [0, 1], [initialOffset, initialOffset - totalTravel]);
+  // Initial: Center the first image (50vh - half image height)
+  const initialOffset = `calc(50vh - ${IMAGE_HEIGHT / 2}px)`;
+  // Final: Top of last image at top of screen
+  const finalOffset = `-${totalTravel}px`;
+  
+  const y = useTransform(scrollYProgress, [0, 1], [initialOffset, finalOffset]);
 
   // Text Animation Constants
   const TEXT_ITEM_HEIGHT = 100; // Height of one text block
@@ -76,11 +75,15 @@ const TeamsSection = () => {
   const textTotalTravel = (teams.length - 1) * textStride;
   const textY = useTransform(scrollYProgress, [0, 1], [textInitialOffset, textInitialOffset - textTotalTravel]);
 
+  // Number Indicator Animation
+  // Move down as we scroll (parallax effect)
+  const numberY = useTransform(scrollYProgress, [0, 1], [0, 500]);
+
   return (
     <div ref={containerRef} className="w-full relative bg-black" style={{ height: `${teams.length * 100}vh` }}>
       <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden pl-[60px]">
       {/* Left: Number Indicator */}
-      <div className="absolute left-10 top-10 z-10">
+      <motion.div style={{ y: numberY }} className="absolute left-10 top-10 z-10">
         <div className="flex items-end leading-none">
           <span className="text-white text-[120px] tracking-tighter" style={{ fontFamily: 'BankGothic, sans-serif' }}>
             0{activeTeam.id}
@@ -89,11 +92,11 @@ const TeamsSection = () => {
             /0{teams.length}
           </span>
         </div>
-      </div>
+      </motion.div>
 
       {/* Center: Image Display */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 translate-y-43">
-        <div className="relative w-[450px] overflow-hidden" style={{ height: CONTAINER_HEIGHT }}>
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+        <div className="relative w-[450px] h-screen overflow-hidden">
            {/* Image Trail Strip */}
            <motion.div 
              style={{ y }}
