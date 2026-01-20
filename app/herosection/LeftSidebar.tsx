@@ -11,7 +11,7 @@ const LeftSidebar = ({ activeSection = 1 }: LeftSidebarProps) => {
     { id: 1, label: 'HOME', default: '01/', href: '#hero' },
     { id: 2, label: 'GALLERY', default: '02/', href: '#gallery' },
     { id: 3, label: 'PASS', default: '03/', href: '#pass' },
-    { id: 4, label: '04', default: '04/', href: '#' },
+    { id: 4, label: 'SPEAKERS', default: '04/', href: '#proshow' },
     { id: 5, label: '05', default: '05/', href: '#' },
     { id: 6, label: '06', default: '06/', href: '#' },
     { id: 7, label: '07', default: '07/', href: '#' },

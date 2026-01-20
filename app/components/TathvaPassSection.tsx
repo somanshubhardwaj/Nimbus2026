@@ -113,6 +113,10 @@ export default function TathvaPassSection() {
     return 2; // Hidden/Back
   };
 
+  const features = activeIndex === 0 
+    ? ["ALL WORKSHOPS", "ALL LECTURES", "ALL COMPETITIONS", "PRO SHOWS"]
+    : ["WHEELS", "ROBOWARS", "TECH CONCLAVE", "INFORMALS"];
+
   return (
     <div className="w-full min-h-screen bg-black relative flex flex-col items-center justify-start pt-24 overflow-hidden">
       {/* Background Grid/Lines */}
@@ -139,10 +143,9 @@ export default function TathvaPassSection() {
 
       {/* Features List */}
       <div className="flex gap-8 md:gap-16 text-white/70 text-sm md:text-base font-bold tracking-widest mb-8 z-10">
-        <span>WHEELS</span>
-        <span>ROBOWARS</span>
-        <span>TECH CONCLAVE</span>
-        <span>INFORMALS</span>
+        {features.map((feature, idx) => (
+          <span key={idx}>{feature}</span>
+        ))}
       </div>
 
       {/* Footer Navigation (Moved Up) */}
@@ -150,9 +153,7 @@ export default function TathvaPassSection() {
         {/* Left Arrow */}
         <div className="flex items-center gap-4 cursor-pointer group" onClick={handlePrev}>
           <div className="flex">
-             <Chevron className="transform scale-x-[-1] w-12 h-12" />
-             <Chevron className="transform scale-x-[-1] w-12 h-12" />
-             <Chevron className="transform scale-x-[-1] w-12 h-12" />
+             <img src="/fast-forward.png" alt="Prev" className="w-48 h-48 transform scale-x-[-1] invert" />
           </div>
           <span className="text-xl tracking-widest font-bold group-hover:translate-x-2 transition-transform">PREV</span>
         </div>
@@ -166,9 +167,7 @@ export default function TathvaPassSection() {
         <div className="flex items-center gap-4 cursor-pointer group" onClick={handleNext}>
           <span className="text-xl tracking-widest font-bold group-hover:-translate-x-2 transition-transform">NEXT</span>
           <div className="flex">
-             <Chevron className="w-12 h-12" />
-             <Chevron className="w-12 h-12" />
-             <Chevron className="w-12 h-12" />
+             <img src="/fast-forward.png" alt="Next" className="w-48 h-48 invert" />
           </div>
         </div>
       </div>

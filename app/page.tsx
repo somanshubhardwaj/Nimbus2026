@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Hero from "./herosection/Hero";
 import Gallery from "./components/Gallery";
 import TathvaPassSection from "./components/TathvaPassSection";
+import ProShowSection from "./components/ProShowSection";
 import LeftSidebar from "./herosection/LeftSidebar";
 
 export default function Home() {
@@ -16,10 +17,11 @@ export default function Home() {
             if (entry.target.id === 'hero') setActiveSection(1);
             if (entry.target.id === 'gallery') setActiveSection(2);
             if (entry.target.id === 'pass') setActiveSection(3);
+            if (entry.target.id === 'proshow') setActiveSection(4);
           }
         });
       },
-      { threshold: 0.5 }
+      { rootMargin: '-45% 0px -45% 0px' }
     );
 
     const sections = document.querySelectorAll('section');
@@ -39,6 +41,9 @@ export default function Home() {
       </section>
       <section id="pass" className="w-full">
         <TathvaPassSection />
+      </section>
+      <section id="proshow" className="w-full">
+        <ProShowSection />
       </section>
     </main>
   );

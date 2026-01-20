@@ -1,4 +1,4 @@
-import TeamsSection from '../components/TeamsSection';
+import TeamsSection from './clubs';
 
 export default function TeamsPage() {
   return (
