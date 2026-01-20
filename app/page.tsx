@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import Hero from "./herosection/Hero";
 import Gallery from "./components/Gallery";
 import TathvaPassSection from "./components/TathvaPassSection";
-import RCRaceSection from "./components/RCRaceSection";
 import LeftSidebar from "./herosection/LeftSidebar";
 
 export default function Home() {
