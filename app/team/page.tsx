@@ -1,9 +1,12 @@
 import "./teams.css";
+import LeftSidebar from "../herosection/LeftSidebar";
 
 export default function TeamsPage() {
   return (
-    <div className="frame-shell">
-      <div className="frame">
+    <>
+      <LeftSidebar activeSection={-1} />
+      <div className="frame-shell">
+        <div className="frame">
         <div className="frame-top"></div>
 
  
@@ -220,6 +223,6 @@ export default function TeamsPage() {
     </div>
     </div>
     </div>
-      
+    </>
   );
 }

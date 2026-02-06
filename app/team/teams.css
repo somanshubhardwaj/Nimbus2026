@@ -31,7 +31,10 @@ html, body{
 
 .frame-shell{
   position:fixed;
-  inset:18px;
+  top: 18px;
+  bottom: 18px;
+  right: 18px;
+  left: 78px;
   border-radius:14px;
   overflow:hidden;   /* clip corners & content */
 }
@@ -65,7 +68,7 @@ html, body{
 .frame-top{
   position:fixed;
   top:10px;
-  left:11.5px;
+  left:71.5px;
   right:13px;
   height:1px;
   border-top: 1px solid white;
@@ -75,7 +78,7 @@ html, body{
 .frame-bottom{
   position:fixed;
   bottom:12px;
-  left:11.5px;
+  left:71.5px;
   right:12.5px;
   height:1px;
   border-bottom: 1px solid white;
@@ -86,7 +89,7 @@ html, body{
   position:fixed;
   top:11px;
   bottom:13px;
-  left:10px;
+  left:70px;
   width:1px;
  border-left: 1px solid white;
   

@@ -1,10 +1,26 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import LeftSidebar from '../herosection/LeftSidebar';
 
 const AboutUs = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const cards = [
+    { id: 1, title: "RC RACING", src: "/herosection/section1.jpeg" },
+    { id: 2, title: "HOVER CRAFT", src: "/herosection/section2.jpeg" },
+    { id: 3, title: "ROBOWAR", src: "/herosection/section3.jpeg" },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % cards.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <main className="min-h-screen bg-black text-white relative overflow-x-hidden selection:bg-[#5227FF] selection:text-white">
       <LeftSidebar activeSection={-1} /> {/* -1 or a specific ID for About Us if we add it to sidebar */}
@@ -67,46 +83,54 @@ const AboutUs = () => {
           </motion.div>
 
           <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="relative"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="relative h-[400px] w-full flex items-center justify-center"
           >
-            {/* Decorative Element 1 (Back) */}
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, y: 50, rotate: 0 },
-                visible: { opacity: 1, y: 0, rotate: 3, transition: { duration: 0.6, ease: "backOut" } }
-              }}
-              className="absolute -inset-4 border-2 border-[#5227FF]/30 rounded-lg bg-black/20" 
-            />
-            
-            {/* Decorative Element 2 (Middle) */}
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, y: 50, rotate: 0 },
-                visible: { opacity: 1, y: 0, rotate: -2, transition: { duration: 0.6, delay: 0.2, ease: "backOut" } }
-              }}
-              className="absolute -inset-4 border-2 border-white/10 rounded-lg bg-black/20" 
-            />
-            
-            {/* Main Content Card (Front) */}
-            <motion.div 
-               variants={{
-                hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.4, ease: "backOut" } }
-              }}
-              className="bg-[#111] p-8 rounded-lg relative h-full border border-white/10 flex flex-col justify-center z-10"
-            >
-               <h3 className="text-2xl font-bold mb-4 text-[#5227FF] font-bankgothic">THEME: 2026</h3>
-               <p className="text-white text-4xl md:text-5xl font-bold leading-tight mb-4 font-neoform">
-                 DIGITAL <br/> FRONTIERS
-               </p>
-               <p className="text-gray-400">
-                 Exploring the boundaries of what is possible in the digital age. From AI to Robotics, 
-                 Blockchains to Cyber-Physical Systems.
-               </p>
-            </motion.div>
+             <div className="relative w-full h-full flex items-center justify-center">
+              {cards.map((card, index) => {
+                const isActive = index === activeIndex;
+                const isPrev = index === (activeIndex - 1 + cards.length) % cards.length;
+                
+                let zIndex = 0;
+                let animateState = {};
+
+                if (isActive) {
+                  zIndex = 30;
+                  animateState = { y: 0, scale: 1, rotate: 0 };
+                } else if (isPrev) {
+                  zIndex = 20;
+                  animateState = { y: 0, scale: 0.95, rotate: -5 };
+                } else {
+                  zIndex = 10;
+                  animateState = { y: "100%", scale: 0.9, rotate: 5 };
+                }
+
+                return (
+                  <motion.div
+                    key={card.id}
+                    animate={animateState}
+                    transition={{ duration: 0.8, ease: "backOut" }}
+                    className="absolute w-[80%] h-full rounded-lg overflow-hidden border border-white/10 shadow-2xl origin-bottom bg-[#111]"
+                    style={{ zIndex }}
+                  >
+                    <Image 
+                      src={card.src} 
+                      alt={card.title} 
+                      fill 
+                      className="object-cover" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                    <div className="absolute bottom-8 left-8 z-10">
+                       <h3 className="text-3xl font-bold text-white font-bankgothic drop-shadow-lg tracking-wider border-l-4 border-[#5227FF] pl-4">
+                         {card.title}
+                       </h3>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </motion.div>
         </div>
 

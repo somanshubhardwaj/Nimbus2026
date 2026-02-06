@@ -14,13 +14,13 @@ const Gallery = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: false, amount: 0.3 }}
-          className="relative w-[1400px] h-[223px] group overflow-hidden cursor-pointer"
+          className="relative w-[1500px] h-[223px] group overflow-hidden cursor-pointer"
         >
           <Image
             src="/herosection/section1.jpeg"
             alt="Thrilling Competition"
             fill
-            sizes="(max-width: 1400px) 100vw, 1400px"
+            sizes="(max-width: 1500px) 100vw, 1500px"
             className="object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
@@ -37,13 +37,13 @@ const Gallery = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: false, amount: 0.3 }}
-          className="relative w-[1400px] h-[223px] group overflow-hidden cursor-pointer"
+          className="relative w-[1500px] h-[223px] group overflow-hidden cursor-pointer"
         >
           <Image
             src="/herosection/section2.jpeg"
             alt="Technical Workshop"
             fill
-            sizes="(max-width: 1400px) 100vw, 1400px"
+            sizes="(max-width: 1500px) 100vw, 1500px"
             className="object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
@@ -60,13 +60,13 @@ const Gallery = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: false, amount: 0.3 }}
-          className="relative w-[1400px] h-[223px] group overflow-hidden cursor-pointer"
+          className="relative w-[1500px] h-[223px] group overflow-hidden cursor-pointer"
         >
           <Image
             src="/herosection/section3.jpeg"
             alt="Pre Nimbus 25"
             fill
-            sizes="(max-width: 1400px) 100vw, 1400px"
+            sizes="(max-width: 1500px) 100vw, 1500px"
             className="object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />

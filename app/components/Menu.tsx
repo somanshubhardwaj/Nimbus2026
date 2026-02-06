@@ -14,7 +14,7 @@ const menuItems = [
   { label: 'HOME', href: '/', image: '/herosection/section1.jpeg' },
   { label: 'ABOUT US', href: '/aboutus', image: '/herosection/section2.jpeg' },
   { label: 'CLUBS', href: '/clubs', image: '/herosection/section3.jpeg' },
-  { label: 'TEAMS', href: '/teams', image: '/teams/exe.jpg' },
+  { label: 'TEAMS', href: '/team', image: '/teams/exe.jpg' },
   { label: 'EVENTS', href: '/events', image: '/rcrace/rcrace.jpeg' },
 ];
 
