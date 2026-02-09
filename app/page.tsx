@@ -6,9 +6,23 @@ import TathvaPassSection from "./components/TathvaPassSection";
 import ProShowSection from "./components/ProShowSection";
 import LeftSidebar from "./herosection/LeftSidebar";
 
+import Preloader from "./components/Preloader";
+
 export default function Home() {
   const [activeSection, setActiveSection] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    // Lock body scroll while loading
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isLoading]);
+
+
+  // ... IntersectionObserver logic ...
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -28,10 +42,12 @@ export default function Home() {
     sections.forEach((section) => observer.observe(section));
 
     return () => sections.forEach((section) => observer.unobserve(section));
-  }, []);
+  }, [isLoading]); // Re-run if loading changes (though mainly once)
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between relative">
+    <main className={`flex min-h-screen flex-col items-center justify-between relative ${isLoading ? 'overflow-hidden max-h-screen' : ''}`}>
+      {isLoading && <Preloader onLoadingComplete={() => setIsLoading(false)} />}
+
       <LeftSidebar activeSection={activeSection} />
       <section id="hero" className="w-full">
         <Hero />
