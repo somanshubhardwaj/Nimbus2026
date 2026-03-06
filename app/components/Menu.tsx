@@ -49,17 +49,17 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                 <motion.div
                   initial={{ rotate: 0 }}
                   animate={{ rotate: 45, y: 8 }}
-                  className="w-6 h-0.5 bg-white group-hover:bg-[#B19EEF] transition-colors"
+                  className="w-6 h-0.5 bg-white group-hover:bg-[#7C3AED] transition-colors"
                 />
                 <motion.div
                   initial={{ opacity: 1 }}
                   animate={{ opacity: 0 }}
-                  className="w-6 h-0.5 bg-white group-hover:bg-[#B19EEF] transition-colors"
+                  className="w-6 h-0.5 bg-white group-hover:bg-[#7C3AED] transition-colors"
                 />
                 <motion.div
                   initial={{ rotate: 0 }}
                   animate={{ rotate: -45, y: -8 }}
-                  className="w-6 h-0.5 bg-white group-hover:bg-[#B19EEF] transition-colors"
+                  className="w-6 h-0.5 bg-white group-hover:bg-[#7C3AED] transition-colors"
                 />
               </div>
             </div>
@@ -79,10 +79,10 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                     onClick={onClose}
                     className="group flex items-center gap-6"
                   >
-                    <span className="text-white/30 font-mono text-sm tracking-widest group-hover:text-[#B19EEF] transition-colors">
+                    <span className="text-white/30 font-mono text-sm tracking-widest group-hover:text-[#FF9FFC] transition-colors">
                       0{index + 1}
                     </span>
-                    <span className="text-4xl md:text-6xl font-bold text-white tracking-tighter group-hover:text-[#B19EEF] transition-colors duration-300 font-bankgothic">
+                    <span className="text-4xl md:text-6xl font-bold tracking-tighter transition-all duration-300 font-bankgothic bg-clip-text text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#7C3AED] group-hover:via-[#FF9FFC] group-hover:to-[#9333EA]">
                       {item.label}
                     </span>
                   </Link>

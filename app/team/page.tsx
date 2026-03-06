@@ -128,7 +128,7 @@ const TeamsPage = () => {
           className="mb-16"
         >
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-4 text-white font-bankgothic">
-            OUR <span className="text-[#B19EEF]">TEAM</span>
+            OUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#FF9FFC] to-[#9333EA]">TEAM</span>
           </h1>
           <p className="text-lg md:text-2xl text-gray-400 font-light w-full max-w-6xl leading-relaxed mb-6">
             The minds behind the magic. A collective of innovators, creators, and leaders driving Nimbus 2026.

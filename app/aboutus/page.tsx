@@ -46,7 +46,7 @@ const AboutUs = () => {
           className="mb-20"
         >
           <h1 className="text-4xl sm:text-6xl md:text-9xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 whitespace-nowrap font-bankgothic">
-            ABOUT <span className="text-[#B19EEF]">NIMBUS</span>
+            ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#FF9FFC] to-[#9333EA]">NIMBUS</span>
           </h1>
           <p className="text-lg md:text-2xl text-gray-400 w-full leading-relaxed font-light mb-8">
             The Annual Technical Festival of <span className="text-white font-bold">NIT Hamirpur</span>.

@@ -42,7 +42,7 @@ const Hero = () => {
         {/* Background Effects */}
         <div className="absolute inset-0 z-0">
           <LiquidEther
-            colors={['#B19EEF', '#FF9FFC', '#B19EEF']}
+            colors={['#7C3AED', '#FF9FFC', '#9333EA']}
             mouseForce={20}
             cursorSize={100}
             isViscous={false}
