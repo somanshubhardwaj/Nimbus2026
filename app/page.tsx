@@ -8,9 +8,11 @@ import LeftSidebar from "./herosection/LeftSidebar";
 
 import Preloader from "./components/Preloader";
 
+let hasSeenPreloader = false;
+
 export default function Home() {
   const [activeSection, setActiveSection] = useState(1);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(!hasSeenPreloader);
 
   useEffect(() => {
     // Lock body scroll while loading
@@ -20,6 +22,11 @@ export default function Home() {
       document.body.style.overflow = 'unset';
     }
   }, [isLoading]);
+
+  const handleLoadingComplete = () => {
+    hasSeenPreloader = true;
+    setIsLoading(false);
+  };
 
 
   // ... IntersectionObserver logic ...
@@ -45,8 +52,8 @@ export default function Home() {
   }, [isLoading]); // Re-run if loading changes (though mainly once)
 
   return (
-    <main className={`flex min-h-screen flex-col items-center justify-between relative ${isLoading ? 'overflow-hidden max-h-screen' : ''}`}>
-      {isLoading && <Preloader onLoadingComplete={() => setIsLoading(false)} />}
+    <main suppressHydrationWarning className={`flex min-h-screen flex-col items-center justify-between relative ${isLoading ? 'overflow-hidden max-h-screen' : ''}`}>
+      {isLoading && <Preloader onLoadingComplete={handleLoadingComplete} />}
 
       <LeftSidebar activeSection={activeSection} />
       <section id="hero" className="w-full">
