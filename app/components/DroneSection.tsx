@@ -44,6 +44,7 @@ const DroneSection = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.8 }}
+                            className="w-full max-w-xl lg:max-w-lg xl:max-w-xl lg:ml-auto"
                         >
                             <div className="flex items-center gap-4 mb-6">
                                 <span className="h-[2px] w-12 bg-[#FF9FFC]"></span>
