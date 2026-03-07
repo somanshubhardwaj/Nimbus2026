@@ -23,26 +23,36 @@ export default function Model() {
   }
 
   useEffect(() => {
+    let rafId: number;
+    let targetX = 0;
+    let targetY = 0;
+    let pointerMoved = false;
+
     const handleMouseMove = (e: MouseEvent) => {
-      if (objRef.current && initialRotation.current) {
-        const { innerWidth, innerHeight } = window;
-        // Normalize mouse position (-1 to 1)
-        const x = (e.clientX / innerWidth) * 2 - 1;
-        const y = -(e.clientY / innerHeight) * 2 + 1; // Invert Y for standard 3D coords
-
-        // Rotation sensitivity
-        const sensitivity = 0.5;
-
-        // Apply rotation relative to initial rotation
-        // Rotate Y axis based on mouse X (looking left/right)
-        // Rotate X axis based on mouse Y (looking up/down)
-        objRef.current.rotation.y = initialRotation.current.y + x * sensitivity;
-        objRef.current.rotation.x = initialRotation.current.x + y * sensitivity;
-      }
+      if (!initialRotation.current) return;
+      const { innerWidth, innerHeight } = window;
+      targetX = (e.clientX / innerWidth) * 2 - 1;
+      targetY = -(e.clientY / innerHeight) * 2 + 1;
+      pointerMoved = true;
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    const animate = () => {
+      if (pointerMoved && objRef.current && initialRotation.current) {
+        const sensitivity = 0.5;
+        // Apply rotation relative to initial rotation with smooth interpolation
+        objRef.current.rotation.y += (initialRotation.current.y + targetX * sensitivity - objRef.current.rotation.y) * 0.1;
+        objRef.current.rotation.x += (initialRotation.current.x + targetY * sensitivity - objRef.current.rotation.x) * 0.1;
+      }
+      rafId = requestAnimationFrame(animate);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    rafId = requestAnimationFrame(animate);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (

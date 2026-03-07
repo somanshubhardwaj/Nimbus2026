@@ -43,20 +43,20 @@ const Hero = () => {
         <div className="absolute inset-0 z-0">
           <LiquidEther
             colors={['#7C3AED', '#FF9FFC', '#9333EA']}
-            mouseForce={20}
-            cursorSize={100}
+            mouseForce={15}
+            cursorSize={80}
             isViscous={false}
-            viscous={30}
-            iterationsViscous={32}
-            iterationsPoisson={32}
-            resolution={0.5}
+            viscous={10}
+            iterationsViscous={8}
+            iterationsPoisson={8}
+            resolution={0.3}
             isBounce={false}
             autoDemo={true}
-            autoSpeed={0.5}
-            autoIntensity={2.2}
-            takeoverDuration={0.25}
-            autoResumeDelay={3000}
-            autoRampDuration={0.6}
+            autoSpeed={0.3}
+            autoIntensity={1.5}
+            takeoverDuration={0.5}
+            autoResumeDelay={5000}
+            autoRampDuration={0.8}
           />
         </div>
 

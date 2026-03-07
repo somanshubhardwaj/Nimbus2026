@@ -115,7 +115,7 @@ const DroneSection = () => {
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.3 }}
-                                className="absolute bottom-4 left-4 md:bottom-10 md:-left-12 z-30 bg-black/80 backdrop-blur-md border border-[#FF9FFC]/30 p-3 md:p-4 shadow-[0_0_30px_rgba(255,159,252,0.2)] skew-x-[10deg]"
+                                className="absolute bottom-4 left-4 md:bottom-10 md:-left-12 z-30 bg-black/95 border border-[#FF9FFC]/30 p-3 md:p-4 shadow-[0_0_30px_rgba(255,159,252,0.2)] skew-x-[10deg]"
                             >
                                 <div className="skew-x-[-10deg]">
                                     <p className="text-[#FF9FFC] font-mono text-[9px] md:text-[10px] tracking-widest uppercase mb-1">Prize Pool</p>

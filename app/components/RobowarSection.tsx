@@ -70,7 +70,7 @@ const RobowarSection = () => {
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.3 }}
-                                className="absolute top-4 right-4 md:top-10 md:-right-12 z-30 bg-black/80 backdrop-blur-md border border-[#B19EEF]/30 p-3 md:p-4 shadow-[0_0_30px_rgba(177,158,239,0.2)] skew-x-[-10deg]"
+                                className="absolute top-4 right-4 md:top-10 md:-right-12 z-30 bg-black/95 border border-[#B19EEF]/30 p-3 md:p-4 shadow-[0_0_30px_rgba(177,158,239,0.2)] skew-x-[-10deg]"
                             >
                                 <div className="skew-x-[10deg]">
                                     <p className="text-[#B19EEF] font-mono text-[9px] md:text-[10px] tracking-widest uppercase mb-1">Prize Pool</p>
