@@ -10,10 +10,10 @@ const Gallery = () => {
       <div className="flex flex-col gap-2 md:gap-4 z-10 w-full px-4 md:px-0 items-center">
         {/* Section 1 */}
         <motion.div
-          initial={{ x: -200, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-50px" }}
           className="relative w-full max-w-[500px] md:max-w-none md:w-[1500px] h-[180px] md:h-[223px] group overflow-hidden cursor-pointer rounded-lg md:rounded-none"
         >
           <Image
@@ -21,7 +21,7 @@ const Gallery = () => {
             alt="Thrilling Competition"
             fill
             sizes="(max-width: 1500px) 100vw, 1500px"
-            className="object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+            className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
           {/* Text Overlay */}
@@ -33,10 +33,10 @@ const Gallery = () => {
 
         {/* Section 2 */}
         <motion.div
-          initial={{ x: 200, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-50px" }}
           className="relative w-full max-w-[500px] md:max-w-none md:w-[1500px] h-[180px] md:h-[223px] group overflow-hidden cursor-pointer rounded-lg md:rounded-none"
         >
           <Image
@@ -44,7 +44,7 @@ const Gallery = () => {
             alt="Technical Workshop"
             fill
             sizes="(max-width: 1500px) 100vw, 1500px"
-            className="object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+            className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
           {/* Text Overlay */}
@@ -56,10 +56,10 @@ const Gallery = () => {
 
         {/* Section 3 */}
         <motion.div
-          initial={{ x: -200, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-50px" }}
           className="relative w-full max-w-[500px] md:max-w-none md:w-[1500px] h-[180px] md:h-[223px] group overflow-hidden cursor-pointer rounded-lg md:rounded-none"
         >
           <Image
@@ -67,7 +67,7 @@ const Gallery = () => {
             alt="Pre Nimbus 25"
             fill
             sizes="(max-width: 1500px) 100vw, 1500px"
-            className="object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+            className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
           {/* Text Overlay */}
@@ -97,10 +97,11 @@ const Gallery = () => {
       <style jsx>{`
         .animate-marquee {
           animation: marquee 20s linear infinite;
+          will-change: transform;
         }
         @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); }
         }
       `}</style>
     </div>
