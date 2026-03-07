@@ -30,7 +30,7 @@ const DroneSection = () => {
             >
                 <h1 className="text-[6rem] sm:text-[8rem] md:text-[12rem] lg:text-[18rem] xl:text-[24rem] font-bankgothic font-black text-transparent whitespace-nowrap opacity-10"
                     style={{ WebkitTextStroke: '2px rgba(255, 159, 252, 0.3)' }}>
-                    DRONES DRONES DRONES
+                    DRONE SOCCER DRONE SOCCER
                 </h1>
             </motion.div>
 
@@ -52,7 +52,7 @@ const DroneSection = () => {
                             </div>
 
                             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase font-bankgothic text-white leading-none mb-4 drop-shadow-[0_0_30px_rgba(255,159,252,0.2)]">
-                                DRONE<br />RACING
+                                DRONE<br />SOCCER
                             </h2>
                             <h3 className="text-xl sm:text-2xl md:text-3xl font-bankgothic text-white/50 mb-8 uppercase tracking-widest">
                                 Sky <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9FFC] to-[#5227FF]">Supremacy</span>
