@@ -104,14 +104,14 @@ const RobowarSection = () => {
 
                             <div className="w-full h-[1px] bg-gradient-to-r from-[#B19EEF]/50 to-transparent mb-8"></div>
 
-                            <p className="text-gray-400 text-base md:text-xl leading-relaxed mb-10 font-light max-w-xl">
+                            <p className="hidden md:block text-gray-400 text-base md:text-xl leading-relaxed mb-10 font-light max-w-xl">
                                 Experience the ultimate battle of engineering and strategy. Build your fighting machine, enter the arena, and survive the chaos. The crowd roars as circuits spark and metal folds. Only the strongest bots prevail.
                             </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-4 mb-10 max-w-xl">
                                 <div className="border-l-2 border-[#B19EEF]/50 pl-4 py-1">
                                     <span className="block text-white/40 font-mono text-xs tracking-widest mb-1 uppercase">Weight Classes</span>
-                                    <span className="block text-white font-bankgothic tracking-wider text-base sm:text-lg md:text-xl">15KG & 60KG</span>
+                                    <span className="block text-white font-bankgothic tracking-wider text-base sm:text-lg md:text-xl">8KG & 15KG</span>
                                 </div>
                                 <div className="border-l-2 border-[#FF9FFC]/50 pl-4 py-1">
                                     <span className="block text-white/40 font-mono text-xs tracking-widest mb-1 uppercase">Arena</span>

@@ -34,8 +34,9 @@ export default function DroneSoccerPage() {
           <div className="inline-block mb-4 px-4 py-1 border border-[#FF9FFC]/40 bg-[#FF9FFC]/10 text-[#FF9FFC] font-mono text-xs tracking-[0.2em] uppercase">
             Aerial Supremacy
           </div>
-          <h1 className="text-6xl sm:text-7xl md:text-9xl font-black uppercase font-bankgothic text-white leading-none mb-6 drop-shadow-[0_0_50px_rgba(255,159,252,0.3)]">
-            DRONE<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9FFC] to-[#5227FF]">SOCCER</span>
+          <h1 className="text-6xl sm:text-7xl md:text-9xl font-black uppercase font-bankgothic text-white leading-tight mb-6 drop-shadow-[0_0_50px_rgba(255,159,252,0.3)]">
+            DRONE<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9FFC] to-[#5227FF]">SOCCER</span>
           </h1>
           <p className="text-lg md:text-2xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed">
             Take flight in the ultimate test of speed and agility. Navigate through impossible cyber-obstacles and claim the skies.

@@ -61,7 +61,7 @@ const DroneSection = () => {
 
                             <div className="w-full h-[1px] bg-gradient-to-r from-[#5227FF]/50 to-transparent mb-8"></div>
 
-                            <p className="text-gray-400 text-base md:text-xl leading-relaxed mb-10 font-light max-w-xl">
+                            <p className="hidden md:block text-gray-400 text-base md:text-xl leading-relaxed mb-10 font-light max-w-xl">
                                 Take flight in the ultimate test of speed and agility. Navigate through impossible cyber-obstacles, outmaneuver your opponents, and claim the skies. Precision, reflexes, and raw velocity will determine the champion.
                             </p>
 

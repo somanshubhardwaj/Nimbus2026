@@ -34,8 +34,9 @@ export default function RobowarPage() {
           <div className="inline-block mb-4 px-4 py-1 border border-[#B19EEF]/40 bg-[#B19EEF]/10 text-[#B19EEF] font-mono text-xs tracking-[0.2em] uppercase">
             Engineering Combat
           </div>
-          <h1 className="text-6xl sm:text-7xl md:text-9xl font-black uppercase font-bankgothic text-white leading-none mb-6 drop-shadow-[0_0_50px_rgba(177,158,239,0.3)]">
-            ROBO<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B19EEF] to-[#FF9FFC]">WARS</span>
+          <h1 className="text-6xl sm:text-7xl md:text-9xl font-black uppercase font-bankgothic text-white leading-tight mb-6 drop-shadow-[0_0_50px_rgba(177,158,239,0.3)]">
+            ROBO<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B19EEF] to-[#FF9FFC]">WARS</span>
           </h1>
           <p className="text-lg md:text-2xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed">
             The ultimate test of mechanical endurance and raw power. Build, fight, and survive the arena.
@@ -56,7 +57,8 @@ export default function RobowarPage() {
               </h2>
               <div className="prose prose-invert prose-lg text-white/70 font-light max-w-none">
                 <p className="mb-4">Welcome to the most destructive competition in Nimbus 2026. Teams will construct remote-controlled combat robots designed to disable, destroy, and outmaneuver their opponents in a reinforced arena.</p>
-                <p>Strategy, engineering, and piloting skills will be pushed to the absolute limit. Are you ready to see sparks fly?</p>
+                <p className="mb-4">This year, engineering brilliance meets raw power as we host the ultimate combat robotics championship. Strategy, durability, and piloting skills will be pushed to the absolute limit.</p>
+                <p>Open to all Engineering students (UG/PG). Teams must consist of 1-6 members.</p>
               </div>
             </motion.section>
 
@@ -67,10 +69,12 @@ export default function RobowarPage() {
               </h2>
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
-                  { title: "Weight Classes", desc: "15 KG (Featherweight) & 60 KG (Middleweight)" },
-                  { title: "Arena Specs", desc: "20x20ft reinforced polycarbonate enclosure" },
-                  { title: "Weaponry", desc: "Spinners, Flippers, Hammers, Lifters allowed (No projectiles/fire)" },
-                  { title: "Format", desc: "3-minute rounds, double elimination bracket" }
+                  { title: "Weight Classes", desc: "8 KG & 15 KG (0% weight tolerance)" },
+                  { title: "Format", desc: "Round 1: Online Abstract (Portfolio + Video) | Round 2: Offline Combat" },
+                  { title: "Ready Time", desc: "Robots must be combat-ready within 15 minutes of match call" },
+                  { title: "Immobility Rule", desc: "Disqualification if bot remains immobile for > 15 seconds" },
+                  { title: "Team Size", desc: "1 - 6 members per team" },
+                  { title: "Repairs", desc: "Mid-match repairs only with prior organizer approval" }
                 ].map((item, i) => (
                   <div key={i} className="bg-white/[0.02] border border-white/5 p-6 hover:border-[#B19EEF]/30 transition-colors group">
                     <h3 className="text-[#B19EEF] font-mono text-sm tracking-widest uppercase mb-2 group-hover:text-[#FF9FFC] transition-colors">{item.title}</h3>
@@ -94,12 +98,16 @@ export default function RobowarPage() {
                   <div className="text-3xl font-bankgothic text-white drop-shadow-[0_0_15px_rgba(177,158,239,0.5)]">₹1,00,000</div>
                 </div>
                 <div>
-                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Schedule</div>
-                  <div className="text-xl font-bankgothic text-white">Day 1 & 2</div>
+                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Deadlines</div>
+                  <div className="text-sm font-bankgothic text-white">15kg: April 01 | 8kg: April 06</div>
                 </div>
                 <div>
                   <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Venue</div>
-                  <div className="text-xl font-bankgothic text-white">Main Grounds Arena</div>
+                  <div className="text-xl font-bankgothic text-white">NIT Hamirpur Ground</div>
+                </div>
+                <div>
+                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Event Dates</div>
+                  <div className="text-xl font-bankgothic text-white">April 10 - April 12, 2026</div>
                 </div>
               </div>
 
