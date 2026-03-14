@@ -129,7 +129,7 @@ const DroneSection = () => {
                             >
                                 <div className="skew-x-[-10deg]">
                                     <p className="text-[#FF9FFC] font-mono text-[9px] md:text-[10px] tracking-widest uppercase mb-1">Prize Pool</p>
-                                    <p className="text-xl md:text-3xl font-bankgothic text-white drop-shadow-[0_0_10px_rgba(255,159,252,0.8)]">₹80,000</p>
+                                    <p className="text-xl md:text-3xl font-bankgothic text-white drop-shadow-[0_0_10px_rgba(255,159,252,0.8)]">₹50,000</p>
                                 </div>
                             </motion.div>
 

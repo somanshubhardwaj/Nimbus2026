@@ -56,8 +56,8 @@ export default function DroneSoccerPage() {
                 MISSION BRIEFING
               </h2>
               <div className="prose prose-invert prose-lg text-white/70 font-light max-w-none">
-                <p className="mb-4">Drone soccer blends high-speed First-Person View (FPV) racing with tactical team-based gameplay. Teams pilot quadcopters wrapped in protective cages, aiming to fly through the opponent's suspended goal hoop.</p>
-                <p>Expect collisions, high-speed maneuvers, and intense defensive formations. Precision, reflexes, and raw velocity will determine the champion.</p>
+                <p className="mb-4">Drone Soccer is a high-speed tactical sport where two teams of pilots fly radio-controlled drones enclosed in protective exoskeletons. The objective is to fly your designated "Striker" through the opponent's elevated goal hoop while "Blockers" defend your territory.</p>
+                <p>Matches consist of two 3-minute halves with a 2-minute pit stop for repairs. The event tests pilot reflexes, mid-air stability, and strategic coordination in a 10m x 5m x 5m netted arena.</p>
               </div>
             </motion.section>
 
@@ -68,14 +68,16 @@ export default function DroneSoccerPage() {
               </h2>
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
-                  { title: "Drone Specs", desc: "Max 40cm Cage Diameter, standard FPV equipment" },
-                  { title: "Arena Specs", desc: "10x20m enclosed safety netting with 3m high suspended goals" },
-                  { title: "Team Size", desc: "3 Pilots (1 Striker, 2 Defenders) and 2 Mechanics" },
-                  { title: "Format", desc: "3 sets of 3-minute intensely paced aerial combat" }
+                  { title: "Class A (Pro)", desc: "20-40cm diameter, 4S-6S Li-Po, Carbon/Polycarb shell" },
+                  { title: "Class B (Student)", desc: "20-30cm diameter, 3S-4S Li-Po, 3D-printed shell" },
+                  { title: "Team Size", desc: "3 - 5 Members per team (Pilots & Mechanics)" },
+                  { title: "Arena", desc: "10m x 5m x 5m Netted Bowl with 2m high goals" },
+                  { title: "Identification", desc: "Striker (Red LED) | Blockers (Blue/Green LED)" },
+                  { title: "Tournament", desc: "Scrutiny > Skill Challenge > Arena Chaos" }
                 ].map((item, i) => (
                   <div key={i} className="bg-white/[0.02] border border-white/5 p-6 hover:border-[#FF9FFC]/30 transition-colors group">
                     <h3 className="text-[#FF9FFC] font-mono text-sm tracking-widest uppercase mb-2 group-hover:text-[#5227FF] transition-colors">{item.title}</h3>
-                    <p className="text-white/80 font-bankgothic tracking-wider">{item.desc}</p>
+                    <p className="text-white/80 font-bankgothic tracking-wider text-sm">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -92,15 +94,16 @@ export default function DroneSoccerPage() {
               <div className="space-y-6 mb-8">
                 <div>
                   <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Prize Pool</div>
-                  <div className="text-3xl font-bankgothic text-white drop-shadow-[0_0_15px_rgba(255,159,252,0.5)]">₹80,000</div>
+                  <div className="text-3xl font-bankgothic text-white drop-shadow-[0_0_15px_rgba(255,159,252,0.5)]">₹50,000</div>
+                  <div className="text-[#FF9FFC] font-mono text-[10px] mt-2 uppercase tracking-tight">+ Certificates for all participants</div>
                 </div>
                 <div>
-                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Schedule</div>
-                  <div className="text-xl font-bankgothic text-white">Day 1</div>
+                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Registration Deadline</div>
+                  <div className="text-xl font-bankgothic text-white uppercase">April 07, 2026</div>
                 </div>
                 <div>
-                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Venue</div>
-                  <div className="text-xl font-bankgothic text-white">Neon Circuit</div>
+                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Event Dates</div>
+                  <div className="text-xl font-bankgothic text-white uppercase">April 10-12, 2026</div>
                 </div>
               </div>
 

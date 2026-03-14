@@ -56,8 +56,8 @@ export default function RcRacePage() {
                 MISSION BRIEFING
               </h2>
               <div className="prose prose-invert prose-lg text-white/70 font-light max-w-none">
-                <p className="mb-4">Welcome to the Nimbu 2026 RC Race circuit. This is a fast-paced, high-adrenaline remote control car race combining technical driving skills with expert vehicle tuning.</p>
-                <p>The track features a mixed surface of dirt and asphalt, tight hairpins, and elevation changes. Precision and speed are equally important if you want to take the checkered flag.</p>
+                <p className="mb-4">Welcome to the Nimbus 2026 RC Race circuit. This high-adrenaline competition features two intense categories: Nitro (Internal Combustion) and Electric, pushing the boundaries of remote control engineering.</p>
+                <p>The track features a mixed off-road surface with challenging hurdles. Precision, speed, and technical tuning are essential to dominate the field and take home the championship.</p>
               </div>
             </motion.section>
 
@@ -68,14 +68,16 @@ export default function RcRacePage() {
               </h2>
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
-                  { title: "Vehicle Specs", desc: "1/10 & 1/8 Scale Buggies/Truggies (Electric Only)" },
-                  { title: "Track Specs", desc: "Mixed Dirt/Asphalt, 250m circuit with ramps" },
-                  { title: "Regulations", desc: "Standard 2S/4S LiPo limits, stock chassis geometry" },
-                  { title: "Format", desc: "Time Trials into Bracket Heats (5 laps per heat)" }
+                  { title: "Vehicle Scale", desc: "1:8 Scale Off-Road Buggies Only" },
+                  { title: "Nitro Specs", desc: "IC Engines up to 4.6cc displacement" },
+                  { title: "Electric Specs", desc: "DC / BLDC Motors (Wireless 2.4 GHz)" },
+                  { title: "Max Dimensions", desc: "800mm (L) x 600mm (W) x 500mm (H)" },
+                  { title: "Team Size", desc: "1 - 5 Members per team" },
+                  { title: "Format", desc: "Qualifying Heats followed by Grand Finals" }
                 ].map((item, i) => (
                   <div key={i} className="bg-white/[0.02] border border-white/5 p-6 hover:border-[#B19EEF]/30 transition-colors group">
                     <h3 className="text-[#B19EEF] font-mono text-sm tracking-widest uppercase mb-2 group-hover:text-[#FF9FFC] transition-colors">{item.title}</h3>
-                    <p className="text-white/80 font-bankgothic tracking-wider">{item.desc}</p>
+                    <p className="text-white/80 font-bankgothic tracking-wider text-sm">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -91,16 +93,17 @@ export default function RcRacePage() {
               
               <div className="space-y-6 mb-8">
                 <div>
-                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Prize Pool</div>
-                  <div className="text-3xl font-bankgothic text-white drop-shadow-[0_0_15px_rgba(177,158,239,0.5)]">₹50,000</div>
+                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Total Prize Pool</div>
+                  <div className="text-3xl font-bankgothic text-white drop-shadow-[0_0_15px_rgba(177,158,239,0.5)]">₹1,20,000</div>
+                  <div className="text-[#B19EEF] font-mono text-[10px] mt-2 uppercase tracking-tight">Nitro: ₹60K | Electric: ₹60K</div>
                 </div>
                 <div>
-                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Schedule</div>
-                  <div className="text-xl font-bankgothic text-white">Day 2</div>
+                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Registration Deadline</div>
+                  <div className="text-xl font-bankgothic text-white uppercase">April 06, 2026</div>
                 </div>
                 <div>
-                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Venue</div>
-                  <div className="text-xl font-bankgothic text-white">Outdoor Arena Track</div>
+                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Event Dates</div>
+                  <div className="text-xl font-bankgothic text-white uppercase">April 10-12, 2026</div>
                 </div>
               </div>
 

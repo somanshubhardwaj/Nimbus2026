@@ -74,7 +74,7 @@ const RcRaceSection = () => {
                             >
                                 <div className="skew-x-[10deg]">
                                     <p className="text-[#B19EEF] font-mono text-[9px] md:text-[10px] tracking-widest uppercase mb-1">Prize Pool</p>
-                                    <p className="text-xl md:text-3xl font-bankgothic text-white drop-shadow-[0_0_10px_rgba(177,158,239,0.8)]">₹50,000</p>
+                                    <p className="text-xl md:text-3xl font-bankgothic text-white drop-shadow-[0_0_10px_rgba(177,158,239,0.8)]">₹1,20,000</p>
                                 </div>
                             </motion.div>
 
@@ -98,23 +98,23 @@ const RcRaceSection = () => {
                                 RC<br />RACE
                             </h2>
                             <h3 className="text-xl sm:text-2xl md:text-3xl font-bankgothic text-white/50 mb-8 uppercase tracking-widest">
-                                Need for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B19EEF] to-[#FF9FFC]">Speed</span>
+                                Nitro <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B19EEF] to-[#FF9FFC]">&</span> Electric
                             </h3>
 
                             <div className="w-full h-[1px] bg-gradient-to-r from-[#B19EEF]/50 to-transparent mb-8"></div>
 
                             <p className="hidden md:block text-gray-400 text-base md:text-xl leading-relaxed mb-10 font-light max-w-xl">
-                                Push the limits of velocity on our custom-built circuit. Tune your machines, master the drifts, and leave your opponents in the dust. The checkered flag awaits the fastest and the furious.
+                                Push 1:8 scale machines to their absolute limits on our custom off-road circuit. Whether it's the roar of the Nitro engines or the silent power of Electric motors, only the fastest survive.
                             </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-4 mb-10 max-w-xl">
                                 <div className="border-l-2 border-[#B19EEF]/50 pl-4 py-1">
                                     <span className="block text-white/40 font-mono text-xs tracking-widest mb-1 uppercase">Circuit Type</span>
-                                    <span className="block text-white font-bankgothic tracking-wider text-base sm:text-lg md:text-xl">DIRT & ASPHALT</span>
+                                    <span className="block text-white font-bankgothic tracking-wider text-base sm:text-lg md:text-xl">OFF-ROAD ARENA</span>
                                 </div>
                                 <div className="border-l-2 border-[#FF9FFC]/50 pl-4 py-1">
-                                    <span className="block text-white/40 font-mono text-xs tracking-widest mb-1 uppercase">Track</span>
-                                    <span className="block text-white font-bankgothic tracking-wider text-base sm:text-lg md:text-xl">OUTDOOR ARENA</span>
+                                    <span className="block text-white/40 font-mono text-xs tracking-widest mb-1 uppercase">Machine Scale</span>
+                                    <span className="block text-white font-bankgothic tracking-wider text-base sm:text-lg md:text-xl">1:8 SCALE BUGGY</span>
                                 </div>
                             </div>
 
