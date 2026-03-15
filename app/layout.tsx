@@ -26,6 +26,9 @@ const neoform = localFont({
 export const metadata: Metadata = {
   title: "Nimbus 2026 - Tech Fest",
   description: "Get ready for the future with Nimbus 2026.",
+  icons: {
+    icon: "/nimbuslogoB-01.png",
+  },
 };
 
 export default function RootLayout({
