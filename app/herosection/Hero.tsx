@@ -65,6 +65,9 @@ const Hero = () => {
         {/* 3D Model */}
         <Model />
 
+        {/* Gradient On Top of Model for Blending with next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-1/2 z-[15] pointer-events-none bg-gradient-to-t from-black via-black/50 to-transparent" />
+
         {/* Foreground Text */}
         <div className="absolute z-20 top-[25%] md:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none flex flex-col items-center justify-center">
           <div className="relative">
@@ -78,13 +81,13 @@ const Hero = () => {
         </div>
 
         {/* Nimbus Logo - Bottom Right */}
-        <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-50 pointer-events-none">
+        <div className="absolute bottom-6 right-4 md:bottom-10 md:right-6 z-50 pointer-events-none">
           <Image 
             src="/nimbuslogoW-01.png" 
             alt="Nimbus Logo" 
-            width={180} 
-            height={60} 
-            className="object-contain opacity-80 w-16 md:w-28"
+            width={90} 
+            height={30} 
+            className="object-contain opacity-80 w-10 md:w-16"
           />
         </div>
       </div>

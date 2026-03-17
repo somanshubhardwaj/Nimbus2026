@@ -8,7 +8,7 @@ import LeftSidebar from '../herosection/LeftSidebar';
 
 // --- Types & Data ---
 
-type Category = 'FACULTY' | 'CORE TEAM' | 'CLUB COORDINATORS';
+type Category = 'FACULTY' | 'FINAL YEAR' | 'PRE FINAL YEAR';
 
 interface TeamMember {
   id: string;
@@ -59,77 +59,101 @@ const TEAM_MEMBERS: TeamMember[] = [
     image: "/whatsapp.jpeg",
     socials: { linkedin: "#", email: "#" }
   },
-  // --- CORE TEAM ---
+  // --- FINAL YEAR ---
   {
     id: "c1",
     name: "SARAYU NALLABOLU",
     role: "PRESIDENT",
-    category: "CORE TEAM",
-    image: "/whatsapp.jpeg",
+    category: "FINAL YEAR",
+    image: "/teamss/final/SARAYU NALLABOLU.png",
     socials: { linkedin: "#", github: "#", instagram: "#", whatsapp: "#" }
   },
   {
     id: "c2",
-    name: "ARYAN SINGH",
+    name: "PRATYUSH SRIVASTAVA",
     role: "VICE PRESIDENT",
-    category: "CORE TEAM",
-    image: "/whatsapp.jpeg",
+    category: "FINAL YEAR",
+    image: "/teamss/final/Pratyush Srivastava.jpg",
     socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
   {
     id: "c3",
-    name: "RISHABH GUPTA",
-    role: "GENERAL SECRETARY",
-    category: "CORE TEAM",
-    image: "/whatsapp.jpeg",
+    name: "RAHUL PRASAD",
+    role: "VICE PRESIDENT",
+    category: "FINAL YEAR",
+    image: "/teamss/final/rahulprashad.jpg",
     socials: { linkedin: "#", github: "#", whatsapp: "#" }
   },
   {
     id: "c4",
-    name: "PRIYA SHARMA",
-    role: "TREASURER",
-    category: "CORE TEAM",
-    image: "/whatsapp.jpeg",
+    name: "ANSHIKA BHARWAL",
+    role: "ORGANISING SECRETARY",
+    category: "FINAL YEAR",
+    image: "/teamss/final/anshikabharwal.jpg",
     socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
   },
   {
     id: "c5",
-    name: "VIKRAM MALHOTRA",
-    role: "TECH LEAD",
-    category: "CORE TEAM",
-    image: "/whatsapp.jpeg",
+    name: "SAUMITRA TANDON",
+    role: "ORGANISING SECRETARY",
+    category: "FINAL YEAR",
+    image: "/teamss/final/SAUMITRA TANDON.jpg",
     socials: { linkedin: "#", github: "#", whatsapp: "#" }
   },
   {
     id: "c6",
-    name: "SNEHA PATEL",
-    role: "DESIGN HEAD",
-    category: "CORE TEAM",
-    image: "/whatsapp.jpeg",
+    name: "SHAGUN SHARMA",
+    role: "SECRETARY",
+    category: "FINAL YEAR",
+    image: "/teamss/final/shagunsharma.jpg",
     socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
   },
   {
     id: "c7",
-    name: "ROHAN VERMA",
-    role: "EVENT COORDINATOR",
-    category: "CORE TEAM",
-    image: "/whatsapp.jpeg",
+    name: "VISHESH CHADHA",
+    role: "SECRETARY TREASURER",
+    category: "FINAL YEAR",
+    image: "/teamss/final/Visheshchada.jpg",
     socials: { linkedin: "#", whatsapp: "#" }
   },
   {
     id: "c8",
-    name: "ANANYA DAS",
-    role: "PR HEAD",
-    category: "CORE TEAM",
-    image: "/whatsapp.jpeg",
+    name: "ANSHUMAN KANDPAL",
+    role: "CLUB SECRETARY",
+    category: "FINAL YEAR",
+    image: "/teamss/final/ANSHUMAN KANDPAL.jpg",
     socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
-  // --- CLUB COORDINATORS ---
+  {
+    id: "c9",
+    name: "MOHD OVAIS",
+    role: "CLUB SECRETARY",
+    category: "FINAL YEAR",
+    image: "/teamss/final/MOHD OVAIS.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  {
+    id: "c10",
+    name: "VARTIKA SINGH",
+    role: "CORE SECRETARY",
+    category: "FINAL YEAR",
+    image: "/teamss/final/VARTIKA SINGH.jpg",
+    socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
+  },
+  {
+    id: "c11",
+    name: "DIVYANSHU VERMA",
+    role: "DEPARTMENTAL SECRETARY",
+    category: "FINAL YEAR",
+    image: "/teamss/final/DIVYANSHU VERMA.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  // --- PRE FINAL YEAR ---
   {
     id: "cc1",
     name: "HARSH VARDHAN",
     role: "MEDEXTROUS COORDINATOR",
-    category: "CLUB COORDINATORS",
+    category: "PRE FINAL YEAR",
     image: "/whatsapp.jpeg",
     socials: { linkedin: "#", whatsapp: "#" }
   },
@@ -137,7 +161,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     id: "cc2",
     name: "KAVYA JOSHI",
     role: "EXE COORDINATOR",
-    category: "CLUB COORDINATORS",
+    category: "PRE FINAL YEAR",
     image: "/whatsapp.jpeg",
     socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
   },
@@ -145,7 +169,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     id: "cc3",
     name: "ADITYA RAJ",
     role: "VIBHAV COORDINATOR",
-    category: "CLUB COORDINATORS",
+    category: "PRE FINAL YEAR",
     image: "/whatsapp.jpeg",
     socials: { linkedin: "#", github: "#", whatsapp: "#" }
   },
@@ -153,13 +177,13 @@ const TEAM_MEMBERS: TeamMember[] = [
     id: "cc4",
     name: "MEERA KAPOOR",
     role: "ROBOTICS COORDINATOR",
-    category: "CLUB COORDINATORS",
+    category: "PRE FINAL YEAR",
     image: "/whatsapp.jpeg",
     socials: { linkedin: "#", whatsapp: "#" }
   },
 ];
 
-const CATEGORIES: Category[] = ['FACULTY', 'CORE TEAM', 'CLUB COORDINATORS'];
+const CATEGORIES: Category[] = ['FACULTY', 'FINAL YEAR', 'PRE FINAL YEAR'];
 
 const TeamsPage = () => {
   const [activeCategory, setActiveCategory] = useState<Category>('FACULTY');
