@@ -56,7 +56,7 @@ const Hero = () => {
         </div>
         <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_20%,black_100%)] md:bg-[radial-gradient(circle_at_center,transparent_0%,black_80%)]" />
         <Model />
-        <div className="absolute bottom-0 left-0 right-0 h-1/2 z-[15] pointer-events-none bg-gradient-to-t from-black via-black/50 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-1/2 z-[35] pointer-events-none bg-gradient-to-t from-black via-black/50 to-transparent" />
         <div className="absolute z-20 top-[25%] md:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none flex flex-col items-center justify-center">
           <div className="relative">
             <span className="absolute -top-4 md:-top-1 left-2 text-white text-base md:text-3xl tracking-[0.2em] font-bankgothic uppercase">10-11 april</span>
