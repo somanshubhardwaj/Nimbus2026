@@ -14,7 +14,7 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black flex flex-col items-center pt-10 pb-10 md:pb-20 relative overflow-hidden">
+    <div className="w-full bg-black flex flex-col items-center pt-10 pb-2 md:pb-4 relative overflow-hidden">
       <div className="flex flex-col gap-2 md:gap-4 z-10 w-full px-4 md:px-0 items-center">
         <motion.div
           initial={isMobile ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
@@ -77,25 +77,31 @@ const Gallery = () => {
           </div>
         </motion.div>
       </div>
-      <div className="w-full mt-10 overflow-hidden py-4 border-t border-b border-white/10 bg-black/50 backdrop-blur-sm">
+      <div className="w-full mt-6 md:mt-10 overflow-hidden py-4 border-t border-b border-white/10 bg-black/50 backdrop-blur-sm">
         <div className="flex whitespace-nowrap animate-marquee">
           {[...Array(10)].map((_, i) => (
             <div key={i} className="flex">
               <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
+                ///ROBOWAR
               </span>
               <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
+                ///DRONE SOCCER
               </span>
               <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
+                ///RC RACE
               </span>
             </div>
           ))}
           {[...Array(10)].map((_, i) => (
             <div key={`dup-${i}`} className="flex">
               <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
+                ///ROBOWAR
               </span>
               <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
+                ///DRONE SOCCER
               </span>
               <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
+                ///RC RACE
               </span>
             </div>
           ))}

@@ -24,7 +24,7 @@ const RobowarSection = () => {
     const marqueeX = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
     return (
-        <section ref={containerRef} className="w-full min-h-screen bg-black text-white relative flex items-center justify-center py-8 md:py-12 z-10 overflow-hidden">
+        <section ref={containerRef} className="w-full min-h-screen bg-black text-white relative flex items-center justify-center pt-2 pb-8 md:pt-4 md:pb-12 z-10 overflow-hidden">
             <div className="absolute inset-0 pointer-events-none z-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(177,158,239,0.08)_0%,transparent_60%),radial-gradient(circle_at_80%_80%,rgba(255,159,252,0.05)_0%,transparent_50%)]" />
                 <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), repeating-linear-gradient(45deg, #000 25%, #222 25%, #222 75%, #000 75%, #000)', backgroundPosition: '0 0, 10px 10px', backgroundSize: '20px 20px' }}></div>
@@ -41,7 +41,7 @@ const RobowarSection = () => {
                 </h1>
             </motion.div>
 
-            <div className="container mx-auto px-6 lg:px-12 relative z-20 -mt-16 sm:mt-0 lg:-mt-16">
+            <div className="container mx-auto px-6 lg:px-12 relative z-20 md:mt-10 lg:mt-20">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                     <div className="lg:col-span-6 relative group">
                         <motion.div
