@@ -46,10 +46,12 @@ export default function RcRacePage() {
 
       {/* Main Content */}
       <div className="container mx-auto px-6 lg:px-12 py-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20">
+        
+        {/* Top Section: Briefing & Status */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-20 items-center">
           
-          {/* Left Column - Details */}
-          <div className="lg:col-span-2 space-y-16">
+          {/* Mission Briefing */}
+          <div className="flex flex-col justify-center">
             <motion.section initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h2 className="text-3xl font-bankgothic text-white mb-6 flex items-center gap-4">
                 <span className="w-8 h-[2px] bg-[#B19EEF]"></span>
@@ -60,65 +62,67 @@ export default function RcRacePage() {
                 <p>The track features a mixed off-road surface with challenging hurdles. Precision, speed, and technical tuning are essential to dominate the field and take home the championship.</p>
               </div>
             </motion.section>
-
-            <motion.section initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
-                <span className="w-8 h-[2px] bg-[#B19EEF]"></span>
-                PARAMETERS
-              </h2>
-              <div className="grid sm:grid-cols-2 gap-6">
-                {[
-                  { title: "Vehicle Scale", desc: "1:8 Scale Off-Road Buggies Only" },
-                  { title: "Nitro Specs", desc: "IC Engines up to 4.6cc displacement" },
-                  { title: "Electric Specs", desc: "DC / BLDC Motors (Wireless 2.4 GHz)" },
-                  { title: "Max Dimensions", desc: "800mm (L) x 600mm (W) x 500mm (H)" },
-                  { title: "Team Size", desc: "1 - 5 Members per team" },
-                  { title: "Format", desc: "Qualifying Heats followed by Grand Finals" }
-                ].map((item, i) => (
-                  <div key={i} className="bg-white/[0.02] border border-white/5 p-6 hover:border-[#B19EEF]/30 transition-colors group">
-                    <h3 className="text-[#B19EEF] font-mono text-sm tracking-widest uppercase mb-2 group-hover:text-[#FF9FFC] transition-colors">{item.title}</h3>
-                    <p className="text-white/80 font-bankgothic tracking-wider text-sm">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.section>
           </div>
 
-          {/* Right Column - Registration/Stats */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-8">
-            <div className="bg-gradient-to-br from-[#B19EEF]/10 to-transparent border border-[#B19EEF]/30 p-8 relative overflow-hidden group">
+          {/* Event Status */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="w-full">
+            <div className="bg-gradient-to-br from-[#B19EEF]/10 to-transparent border border-[#B19EEF]/30 p-6 lg:p-8 relative overflow-hidden group flex flex-col">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#B19EEF]/20 blur-[50px] rounded-full group-hover:bg-[#FF9FFC]/30 transition-colors duration-500"></div>
               
-              <h3 className="text-white font-bankgothic text-2xl mb-6">EVENT STATUS</h3>
-              
-              <div className="space-y-6 mb-8">
-                <div>
-                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Total Prize Pool</div>
-                  <div className="text-3xl font-bankgothic text-white drop-shadow-[0_0_15px_rgba(177,158,239,0.5)]">₹1,20,000</div>
-                  <div className="text-[#B19EEF] font-mono text-[10px] mt-2 uppercase tracking-tight">Nitro: ₹60K | Electric: ₹60K</div>
+              <div className="relative z-10 w-full">
+                <h3 className="text-white font-bankgothic text-xl lg:text-2xl mb-6 lg:mb-8">EVENT STATUS</h3>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mb-6 lg:mb-8">
+                  <div className="col-span-1 sm:col-span-2 flex flex-col sm:flex-row sm:justify-between sm:items-start border-b border-[#B19EEF]/20 pb-4 lg:pb-6">
+                    <div>
+                      <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Total Prize Pool</div>
+                      <div className="text-2xl lg:text-3xl font-bankgothic text-white drop-shadow-[0_0_15px_rgba(177,158,239,0.5)]">₹1,20,000</div>
+                      <div className="text-[#B19EEF] font-mono text-[10px] mt-2 uppercase tracking-tight">Nitro: ₹60K | Electric: ₹60K</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Reg. Deadline</div>
+                    <div className="text-lg lg:text-xl font-bankgothic text-white uppercase mt-1">April 06, 2026</div>
+                  </div>
+                  <div>
+                    <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Event Dates</div>
+                    <div className="text-lg lg:text-xl font-bankgothic text-white uppercase mt-1">April 10-12</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Registration Deadline</div>
-                  <div className="text-xl font-bankgothic text-white uppercase">April 06, 2026</div>
-                </div>
-                <div>
-                  <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Event Dates</div>
-                  <div className="text-xl font-bankgothic text-white uppercase">April 10-12, 2026</div>
+
+                <div className="pt-2">
+                  <button className="w-full py-3 lg:py-4 bg-[#B19EEF] hover:bg-[#FF9FFC] hover:text-black text-black font-bankgothic font-bold tracking-[0.2em] transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(177,158,239,0.4)]">
+                    START ENGINES
+                  </button>
                 </div>
               </div>
-
-              <button className="w-full py-4 bg-[#B19EEF] hover:bg-[#FF9FFC] hover:text-black text-black font-bankgothic font-bold tracking-[0.2em] transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(177,158,239,0.4)]">
-                START ENGINES
-              </button>
-            </div>
-
-            <div className="relative w-full aspect-video md:aspect-square border border-[#B19EEF]/20 overflow-hidden group">
-                <Image src="/rcrace/rcrace.jpeg" alt="RC Race Thumbnail" fill className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             </div>
           </motion.div>
-
         </div>
+
+        {/* Bottom Section: Parameters */}
+        <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+          <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
+            <span className="w-8 h-[2px] bg-[#B19EEF]"></span>
+            PARAMETERS
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: "Vehicle Scale", desc: "1:8 Scale Off-Road Buggies Only" },
+              { title: "Nitro Specs", desc: "IC Engines up to 4.6cc displacement" },
+              { title: "Electric Specs", desc: "DC / BLDC Motors (Wireless 2.4 GHz)" },
+              { title: "Max Dimensions", desc: "800mm (L) x 600mm (W) x 500mm (H)" },
+              { title: "Team Size", desc: "1 - 5 Members per team" },
+              { title: "Format", desc: "Qualifying Heats followed by Grand Finals" }
+            ].map((item, i) => (
+              <div key={i} className="bg-white/[0.02] border border-white/5 p-6 hover:border-[#B19EEF]/30 transition-colors group">
+                <h3 className="text-[#B19EEF] font-mono text-sm tracking-widest uppercase mb-2 group-hover:text-[#FF9FFC] transition-colors">{item.title}</h3>
+                <p className="text-white/80 font-bankgothic tracking-wider text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
       </div>
     </main>
   );
