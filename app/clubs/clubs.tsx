@@ -3,6 +3,8 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, useSpring, useTransform } from 'framer-motion';
 
+import Link from 'next/link';
+
 const TeamsSection = () => {
   const teams = [
     {
@@ -10,56 +12,80 @@ const TeamsSection = () => {
       name: 'HERMATICA',
       fullName: 'TEAM HERMATICA',
       image: '/clubs/hermatica.jpeg',
-      description: 'Mathematics and Logic'
+      description: 'Mathematics and Logic Society',
+      website: ''
     },
     {
       id: 2,
-      name: 'ABRAXAS',
-      fullName: 'TEAM ABRAXAS',
-      image: '/clubs/abraxas.jpeg',
-      description: 'Creative and Technical Innovation'
+      name: 'MATCOM',
+      fullName: 'TEAM MATCOM',
+      image: '', // Empty as requested
+      description: 'Mathematics and Computing Society',
+      website: 'https://matcom-website.vercel.app/'
     },
     {
       id: 3,
-      name: 'DESIGNOCRATS',
-      fullName: 'TEAM DESIGNOCRATS',
-      image: '/clubs/designocrats.jpeg',
-      description: 'Design and Aesthetics'
+      name: 'C HELIX',
+      fullName: 'TEAM C HELIX',
+      image: '', // Empty as requested
+      description: 'Chemistry and Molecular Sciences',
+      website: 'https://chelix.netlify.app/'
     },
     {
       id: 4,
-      name: 'METAMORPH',
-      fullName: 'TEAM METAMORPH',
-      image: '/clubs/metamorph.jpeg',
-      description: 'Material and Metallurgical Engineering'
+      name: 'ABRAXAS',
+      fullName: 'TEAM ABRAXAS',
+      image: '/clubs/abraxas.jpeg',
+      description: 'Creative and Technical Innovation',
+      website: 'https://team-abraxas-2026.vercel.app/'
     },
     {
       id: 5,
-      name: 'OJAS',
-      fullName: 'TEAM OJAS',
-      image: '/clubs/ojas.jpeg',
-      description: 'Electrical and Electronics Engineering'
+      name: 'DESIGNOCRATS',
+      fullName: 'TEAM DESIGNOCRATS',
+      image: '/clubs/designocrats.jpeg',
+      description: 'Design and Aesthetics',
+      website: 'https://design-ocrafts.vercel.app/'
     },
     {
       id: 6,
-      name: 'MEDEXTROUS',
-      fullName: 'TEAM MEDEXTROUS',
-      image: '/teams/medex.jpg',
-      description: 'Medical Innovation'
+      name: 'METAMORPH',
+      fullName: 'TEAM METAMORPH',
+      image: '/clubs/metamorph.jpeg',
+      description: 'Material and Metallurgical Engineering',
+      website: 'https://teammetamorph.vercel.app/'
     },
     {
       id: 7,
-      name: 'EXE',
-      fullName: 'TEAM EXE',
-      image: '/teams/exe.jpg',
-      description: 'Executive Technical'
+      name: 'OJAS',
+      fullName: 'TEAM OJAS',
+      image: '/clubs/ojas.jpeg',
+      description: 'Electrical and Electronics Engineering',
+      website: 'https://team-ojas-nith.vercel.app/'
     },
     {
       id: 8,
+      name: 'MEDEXTROUS',
+      fullName: 'TEAM MEDEXTROUS',
+      image: '/teams/medex.jpg',
+      description: 'Medical Innovation',
+      website: 'https://medextrous-2026.vercel.app/'
+    },
+    {
+      id: 9,
+      name: 'EXE',
+      fullName: 'TEAM EXE',
+      image: '/teams/exe.jpg',
+      description: 'Executive Technical',
+      website: 'https://website-2k26-dzk2.vercel.app/'
+    },
+    {
+      id: 10,
       name: 'VIBHAV',
       fullName: 'TEAM VIBHAV',
       image: '/teams/vibhav.jpg',
-      description: 'Vibrant Creation'
+      description: 'Vibrant Creation',
+      website: 'https://vibhav-nine.vercel.app/'
     }
   ];
 
@@ -201,9 +227,19 @@ const TeamsSection = () => {
               className="mt-4 max-w-xs"
             >
               <p className="text-[#B19EEF] font-mono text-xs tracking-widest mb-1">// DESCRIPTION</p>
-              <p className="text-gray-300 text-sm leading-relaxed border-l-2 border-[#B19EEF]/50 pl-3">
+              <p className="text-gray-300 text-sm leading-relaxed border-l-2 border-[#B19EEF]/50 pl-3 mb-4">
                 {activeTeam.description}
               </p>
+              {activeTeam.website && (
+                <Link 
+                  href={activeTeam.website} 
+                  target="_blank"
+                  className="inline-flex items-center gap-2 text-[#B19EEF] font-bankgothic text-[10px] tracking-widest hover:text-white transition-colors group/link"
+                >
+                  <span className="border-b border-[#B19EEF]/50 group-hover/link:border-white">LAUNCH SITE</span>
+                  <svg className="w-3 h-3 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </Link>
+              )}
             </motion.div>
           </div>
         </motion.div>
@@ -240,15 +276,25 @@ const TeamsSection = () => {
                     <div className="absolute -bottom-[3px] -right-[3px] w-3 h-3 bg-[#B19EEF]" />
                   </div>
 
-                  <Image
-                    src={team.image}
-                    alt={team.fullName}
-                    fill
-                    className={`object-cover transition-all duration-700 ease-out ${activeIndex === index
-                      ? 'grayscale-0 border-2 border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] z-20'
-                      : 'grayscale opacity-40 border-2 border-transparent z-10 blur-[2px]'
-                      }`}
-                  />
+                  {team.image ? (
+                    <Image
+                      src={team.image}
+                      alt={team.fullName}
+                      fill
+                      className={`object-cover transition-all duration-700 ease-out ${activeIndex === index
+                        ? 'grayscale-0 border-2 border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] z-20'
+                        : 'grayscale opacity-40 border-2 border-transparent z-10 blur-[2px]'
+                        }`}
+                    />
+                  ) : (
+                    <div className={`w-full h-full bg-gray-900 flex items-center justify-center transition-all duration-700 ${activeIndex === index
+                      ? 'border-2 border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] z-20'
+                      : 'opacity-40 border-2 border-transparent z-10 blur-[2px]'
+                      }`}>
+                      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px)', backgroundSize: '10px 10px' }} />
+                      <span className="text-[#B19EEF] font-bankgothic text-xs tracking-widest opacity-40 uppercase">No Archive Image</span>
+                    </div>
+                  )}
                   {activeIndex === index && (
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#B19EEF]/10 to-transparent z-30 pointer-events-none bg-[length:100%_4px]" />
                   )}
