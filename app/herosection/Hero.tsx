@@ -54,7 +54,7 @@ const Hero = () => {
             autoRampDuration={0.8}
           />
         </div>
-        <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_20%,black_100%)] md:bg-[radial-gradient(circle_at_center,transparent_0%,black_80%)]" />
+        <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_40%,black_100%)] md:bg-[radial-gradient(circle_at_center,transparent_30%,black_90%)]" />
         <Model />
         <div className="absolute bottom-0 left-0 right-0 h-1/2 z-[35] pointer-events-none bg-gradient-to-t from-black via-black/50 to-transparent" />
         <div className="absolute z-20 top-[25%] md:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none flex flex-col items-center justify-center">
