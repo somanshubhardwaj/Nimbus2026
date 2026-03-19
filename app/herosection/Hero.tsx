@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import GlitchText from './GlitchText';
 
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 const LiquidEther = dynamic(() => import('./liquidether'), {
   ssr: false,
@@ -12,7 +13,20 @@ const LiquidEther = dynamic(() => import('./liquidether'), {
 });
 const Model = dynamic(() => import('./model'), { ssr: false });
 
-const Hero = () => {
+interface HeroProps {
+  onModelLoad?: () => void;
+}
+
+const Hero = ({ onModelLoad }: HeroProps) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="w-full h-screen relative bg-black overflow-hidden">
       <div className="absolute top-6 right-4 md:top-8 md:right-8 z-50 pointer-events-none">
@@ -22,6 +36,7 @@ const Hero = () => {
           width={60}
           height={20}
           className="object-contain opacity-90"
+          priority
         />
       </div>
       <div
@@ -36,26 +51,28 @@ const Hero = () => {
       />
       <div className="relative z-10 w-full h-full flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <LiquidEther
-            colors={['#c35debff', '#FF9FFC', '#9333EA']}
-            mouseForce={15}
-            cursorSize={80}
-            isViscous={false}
-            viscous={10}
-            iterationsViscous={8}
-            iterationsPoisson={8}
-            resolution={0.3}
-            isBounce={false}
-            autoDemo={true}
-            autoSpeed={0.3}
-            autoIntensity={1.5}
-            takeoverDuration={0.5}
-            autoResumeDelay={5000}
-            autoRampDuration={0.8}
-          />
+          {!isMobile && (
+            <LiquidEther
+              colors={['#c35debff', '#FF9FFC', '#9333EA']}
+              mouseForce={15}
+              cursorSize={80}
+              isViscous={false}
+              viscous={10}
+              iterationsViscous={8}
+              iterationsPoisson={8}
+              resolution={0.3}
+              isBounce={false}
+              autoDemo={true}
+              autoSpeed={0.3}
+              autoIntensity={1.5}
+              takeoverDuration={0.5}
+              autoResumeDelay={5000}
+              autoRampDuration={0.8}
+            />
+          )}
         </div>
         <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_40%,black_100%)] md:bg-[radial-gradient(circle_at_center,transparent_30%,black_90%)]" />
-        <Model />
+        <Model onLoaded={onModelLoad} />
         <div className="absolute bottom-0 left-0 right-0 h-1/2 z-[35] pointer-events-none bg-gradient-to-t from-black via-black/50 to-transparent" />
         <div className="absolute z-20 top-[25%] md:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none flex flex-col items-center justify-center">
           <div className="relative">
@@ -74,6 +91,7 @@ const Hero = () => {
             width={75}
             height={25}
             className="object-contain opacity-80 w-8 md:w-14"
+            priority
           />
         </div>
       </div>

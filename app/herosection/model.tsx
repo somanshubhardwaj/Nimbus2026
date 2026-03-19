@@ -3,13 +3,14 @@
 import Spline from "@splinetool/react-spline";
 import { useRef, useEffect, useState } from "react";
 
-export default function Model() {
+export default function Model({ onLoaded }: { onLoaded?: () => void }) {
   const objRef = useRef<any>(null);
   const initialRotation = useRef<{ x: number; y: number } | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   function onLoad(splineApp: any) {
-    setIsLoading(false);
+    if (onLoaded) {
+      onLoaded();
+    }
     const target = splineApp.findObjectByName('Head') ||
       splineApp.findObjectByName('head') ||
       splineApp.findObjectByName('Eye') ||
@@ -55,12 +56,7 @@ export default function Model() {
 
   return (
     <div className="w-[130%] md:w-full h-full absolute -left-[15%] md:left-0 top-0 z-30 pointer-events-none translate-y-[150px] md:translate-y-[180px] scale-[0.9] xl:scale-90">
-      {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center text-white/50 text-sm tracking-widest animate-pulse">
-          LOADING MODEL...
-        </div>
-      )}
-      <div className={`w-full h-full transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+      <div className="w-full h-full opacity-100">
         <Spline
           onLoad={onLoad}
           scene="https://prod.spline.design/VTslyCeVrhY5VGYO/scene.splinecode"

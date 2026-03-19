@@ -13,7 +13,7 @@ const bootSequence = [
     "ACCESS GRANTED."
 ];
 
-const Preloader = ({ onLoadingComplete }: { onLoadingComplete: () => void }) => {
+const Preloader = ({ onLoadingComplete, modelLoaded }: { onLoadingComplete: () => void, modelLoaded: boolean }) => {
     const [progress, setProgress] = useState(0);
     const [bootLine, setBootLine] = useState(0);
     const [showContent, setShowContent] = useState(true);
@@ -34,19 +34,23 @@ const Preloader = ({ onLoadingComplete }: { onLoadingComplete: () => void }) => 
             setProgress((prev) => {
                 const next = prev + 0.8; // Slower, smoother
                 if (next >= 100) {
-                    clearInterval(interval);
-                    setTimeout(() => {
-                        setShowContent(false);
-                        setTimeout(onLoadingComplete, 800);
-                    }, 500);
-                    return 100;
+                    if (modelLoaded) {
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            setShowContent(false);
+                            setTimeout(onLoadingComplete, 800);
+                        }, 500);
+                        return 100;
+                    } else {
+                        return 99;
+                    }
                 }
                 return next;
             });
         }, 20);
 
         return () => clearInterval(interval);
-    }, [onLoadingComplete]);
+    }, [onLoadingComplete, modelLoaded]);
 
     useEffect(() => {
         const interval = setInterval(() => {

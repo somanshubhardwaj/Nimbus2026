@@ -16,11 +16,13 @@ const geistMono = Geist_Mono({
 const bankGothic = localFont({
   src: "../public/bankgothic-md-bt/BankGothic Md BT.ttf",
   variable: "--font-bankgothic",
+  display: "swap",
 });
 
 const neoform = localFont({
   src: "../public/neoform-font-1766056187-0/NeoformDemo-2v5zX.otf",
   variable: "--font-neoform",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -41,6 +43,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://prod.spline.design" />
         <link rel="dns-prefetch" href="https://prod.spline.design" />
+        <link rel="preload" href="https://prod.spline.design/VTslyCeVrhY5VGYO/scene.splinecode" as="fetch" crossOrigin="anonymous" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${bankGothic.variable} ${neoform.variable} antialiased`}

@@ -16,6 +16,15 @@ let hasSeenPreloader = false;
 export default function Home() {
   const [activeSection, setActiveSection] = useState(1);
   const [isLoading, setIsLoading] = useState(!hasSeenPreloader);
+  const [isModelLoaded, setIsModelLoaded] = useState(hasSeenPreloader);
+
+  useEffect(() => {
+    if (sessionStorage.getItem('hasSeenPreloader')) {
+      hasSeenPreloader = true;
+      setIsLoading(false);
+      setIsModelLoaded(true);
+    }
+  }, []);
 
   useEffect(() => {
     if (isLoading) {
@@ -27,6 +36,7 @@ export default function Home() {
 
   const handleLoadingComplete = () => {
     hasSeenPreloader = true;
+    sessionStorage.setItem('hasSeenPreloader', 'true');
     setIsLoading(false);
   };
 
@@ -54,24 +64,28 @@ export default function Home() {
 
   return (
     <main suppressHydrationWarning className={`flex min-h-screen flex-col items-center justify-between relative ${isLoading ? 'overflow-hidden max-h-screen' : ''}`}>
-      {isLoading && <Preloader onLoadingComplete={handleLoadingComplete} />}
+      {isLoading && <Preloader onLoadingComplete={handleLoadingComplete} modelLoaded={isModelLoaded} />}
 
       <LeftSidebar activeSection={activeSection} />
       <section id="hero" className="w-full">
-        <Hero />
+        <Hero onModelLoad={() => setIsModelLoaded(true)} />
       </section>
-      <section id="gallery" className="w-full">
-        <Gallery />
-      </section>
-      <section id="robowar" className="w-full">
-        <RobowarSection />
-      </section>
-      <section id="drone" className="w-full">
-        <DroneSection />
-      </section>
-      <section id="rcrace" className="w-full">
-        <RcRaceSection />
-      </section>
+      {isModelLoaded && (
+        <>
+          <section id="gallery" className="w-full">
+            <Gallery />
+          </section>
+          <section id="robowar" className="w-full">
+            <RobowarSection />
+          </section>
+          <section id="drone" className="w-full">
+            <DroneSection />
+          </section>
+          <section id="rcrace" className="w-full">
+            <RcRaceSection />
+          </section>
+        </>
+      )}
     </main>
   );
 }
