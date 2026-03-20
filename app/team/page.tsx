@@ -3,8 +3,16 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
 import LeftSidebar from '../herosection/LeftSidebar';
+
+const SOCIAL_ICON_MAP: Record<string, React.ElementType> = {
+  linkedin: Linkedin,
+  github: Github,
+  instagram: Instagram,
+  email: Mail,
+};
 
 
 type Category = 'FACULTY' | 'FINAL YEAR' | 'PRE FINAL YEAR';
@@ -265,7 +273,18 @@ const TeamsPage = () => {
         }}
       />
 
-      <div className="relative z-10 px-6 pt-24 pb-12 md:pl-[120px] md:pr-8 md:py-20 max-w-7xl mx-auto">
+      {/* Back Navigation */}
+      <nav className="relative w-full p-6 z-50 flex justify-between items-center bg-transparent md:pl-[80px]">
+        <Link href="/" className="group flex items-center gap-3 text-white/70 hover:text-[#B19EEF] transition-colors">
+          <div className="p-2 border border-white/20 group-hover:border-[#B19EEF]/50 rounded-full bg-black/50 backdrop-blur-md">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+          </div>
+          <span className="font-bankgothic text-sm tracking-widest uppercase mt-1">Return</span>
+        </Link>
+        <div className="font-bankgothic text-[#B19EEF] tracking-[0.3em] text-sm hidden sm:block">TEAM // NIMBUS 2026</div>
+      </nav>
+
+      <div className="relative z-10 px-6 pt-4 pb-12 md:pl-[120px] md:pr-8 md:pb-20 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -353,8 +372,29 @@ const TeamsPage = () => {
                     <h3 className="text-2xl md:text-3xl font-bold font-bankgothic text-white mb-1 tracking-wide">
                       {member.name}
                     </h3>
-                    <p className="text-sm font-mono text-gray-400 tracking-wider mb-6">
+                    <p className="text-sm font-mono text-gray-400 tracking-wider mb-4">
+                      {member.role}
                     </p>
+
+                    {/* Social Links */}
+                    <div className="flex gap-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                      {Object.entries(member.socials)
+                        .filter(([key]) => key !== 'whatsapp' && SOCIAL_ICON_MAP[key])
+                        .map(([key, url]) => {
+                          const IconComponent = SOCIAL_ICON_MAP[key];
+                          return (
+                            <a
+                              key={key}
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:border-[#B19EEF] hover:bg-[#B19EEF]/20 transition-all duration-300"
+                            >
+                              <IconComponent className="w-3.5 h-3.5 text-gray-400 hover:text-white transition-colors" />
+                            </a>
+                          );
+                        })}
+                    </div>
                   </div>
                 </div>
                 <div className="absolute top-0 left-0 w-8 h-8 border-l border-t border-white/20 pointer-events-none transition-colors duration-300 group-hover:border-[#B19EEF]" />
