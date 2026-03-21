@@ -90,20 +90,12 @@ const TEAM_MEMBERS: TeamMember[] = [
     socials: { linkedin: "#", github: "#", whatsapp: "#" }
   },
   {
-    id: "c4",
-    name: "ANSHIKA BHARWAL",
-    role: "ORGANISING SECRETARY",
+    id: "c15",
+    name: "DIVESH RUSTAGI",
+    role: "SECRETARY",
     category: "FINAL YEAR",
-    image: "/teamss/final/anshikabharwal.jpg",
-    socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
-  },
-  {
-    id: "c5",
-    name: "SAUMITRA TANDON",
-    role: "ORGANISING SECRETARY",
-    category: "FINAL YEAR",
-    image: "/teamss/final/SAUMITRA TANDON.jpg",
-    socials: { linkedin: "#", github: "#", whatsapp: "#" }
+    image: "/teamss/final/Divesh Rustagi.PNG",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
   {
     id: "c6",
@@ -151,6 +143,30 @@ const TEAM_MEMBERS: TeamMember[] = [
     role: "DEPARTMENTAL SECRETARY",
     category: "FINAL YEAR",
     image: "/teamss/final/DIVYANSHU VERMA.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  {
+    id: "c12",
+    name: "DEVESH CHANDRA",
+    role: "SECRETARY",
+    category: "FINAL YEAR",
+    image: "/teamss/final/Devesh Chandra.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  {
+    id: "c13",
+    name: "SAKSHAM SHARMA",
+    role: "SECRETARY",
+    category: "FINAL YEAR",
+    image: "/teamss/final/Saksham Sharma.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  {
+    id: "c14",
+    name: "EKANSH MAHAJAN",
+    role: "SECRETARY",
+    category: "FINAL YEAR",
+    image: "/teamss/final/Ekansh Mahajan.jpg",
     socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
   {
