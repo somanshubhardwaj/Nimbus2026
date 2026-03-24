@@ -34,9 +34,16 @@ export default function DroneSoccerPage() {
             DRONE<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9FFC] to-[#5227FF]">SOCCER</span>
           </h1>
-          <p className="text-lg md:text-2xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-2xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed mb-8">
             Take flight in the ultimate test of speed and agility. Navigate through impossible cyber-obstacles and claim the skies.
           </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {['Mechanical Engineer', 'Robotics Engineer', 'Electronics Engineer'].map((tag, i) => (
+              <span key={i} className="px-3 py-1 border border-white/10 bg-white/5 text-white/40 font-mono text-[10px] uppercase tracking-widest">
+                {tag}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </header>
 
@@ -51,8 +58,17 @@ export default function DroneSoccerPage() {
                 MISSION BRIEFING
               </h2>
               <div className="prose prose-invert prose-lg text-white/70 font-light max-w-none">
-                <p className="mb-4">Drone Soccer is a high-speed tactical sport where two teams of pilots fly radio-controlled drones enclosed in protective exoskeletons. The objective is to fly your designated "Striker" through the opponent's elevated goal hoop while "Blockers" defend your territory.</p>
-                <p>Matches consist of two 3-minute halves with a 2-minute pit stop for repairs. The event tests pilot reflexes, mid-air stability, and strategic coordination in a 10m x 5m x 5m netted arena.</p>
+                <p className="mb-4">Drone Soccer is a high-speed, tactical sport where two teams of five pilots fly radio-controlled drones enclosed in protective exoskeletons. The objective is to fly your designated "Striker" drone through the opponent's circular goal elevated in the air, while the remaining drones act as "Blockers" to defend or clear paths.</p>
+                <div className="grid grid-cols-1 gap-4 mt-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-1 h-1 rounded-full bg-[#FF9FFC] mt-3 flex-shrink-0"></div>
+                    <p className="text-sm"><b>The Challenge:</b> It tests pilot reflexes, mid-air stability, and strategic teamwork.</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-1 h-1 rounded-full bg-[#FF9FFC] mt-3 flex-shrink-0"></div>
+                    <p className="text-sm"><b>The Engineering:</b> Teams must manage battery discharge rates, aerodynamic drag from the protective cages, and rapid-response repairs during "Pit Stops".</p>
+                  </div>
+                </div>
               </div>
             </motion.section>
           </div>
@@ -92,6 +108,52 @@ export default function DroneSoccerPage() {
           </motion.div>
         </div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
+              <span className="w-8 h-[2px] bg-[#FF9FFC]"></span>
+              GUIDELINES
+            </h2>
+            <ul className="space-y-4">
+              {[
+                "Drones will be provided by us, Teams must use only those drones which are provided by the organiser.",
+                "Every drone must have a rigid protective exoskeleton securely mounted to withstand high-speed collisions without breaking.",
+                "Drones must include an automatic kill switch or motor-stop system that activates immediately if the radio signal is lost.",
+                "Striker drones must use a distinct LED color (e.g., red) to differentiate them from Blocker drones (e.g., blue/green).",
+                "Includes scrutiny checks, a 90-second qualifying skill challenge through gates, and the main match with two 3-minute halves and a 2-minute pit stop break.",
+                "Only the Striker drone is allowed to score by passing through the goal hoop; if a Blocker enters the hoop, the opposing team receives a free kick.",
+                "Pilots and spectators must remain outside the netted arena, and excessive ramming or attacking a grounded drone (Dirty Flying) will result in penalties."
+              ].map((text, i) => (
+                <li key={i} className="flex gap-4 group">
+                  <span className="text-[#FF9FFC] font-mono text-xs mt-1">[{i + 1}]</span>
+                  <span className="text-white/60 text-sm leading-relaxed group-hover:text-white/90 transition-colors">{text}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.section>
+
+          <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
+              <span className="w-8 h-[2px] bg-[#FF9FFC]"></span>
+              DRONE DETAILS
+            </h2>
+            <div className="bg-white/[0.02] border border-white/5 p-6 space-y-6">
+              <div>
+                <h4 className="text-[#FF9FFC] font-mono text-xs tracking-widest uppercase mb-3">Class A (Pro)</h4>
+                <p className="text-white/60 text-xs leading-relaxed">
+                  Spherical size between 20 cm and 40 cm. Must use a 4S - 6S Li-Po battery. Exoskeleton made of carbon fiber or polycarbonate. Uses 2.4 GHz radio and 5.8 GHz video transmission.
+                </p>
+              </div>
+              <div className="pt-6 border-t border-white/5">
+                <h4 className="text-[#FF9FFC] font-mono text-xs tracking-widest uppercase mb-3">Class B (Student-Built)</h4>
+                <p className="text-white/60 text-xs leading-relaxed">
+                  Spherical size between 20 cm and 30 cm. Must use a 3S - 4S Li-Po battery. Exoskeleton made of 3D-printed material or high-impact plastic. Operates on 2.4 GHz digital standard.
+                </p>
+              </div>
+            </div>
+          </motion.section>
+        </div>
+
         <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
           <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
             <span className="w-8 h-[2px] bg-[#FF9FFC]"></span>
@@ -99,12 +161,12 @@ export default function DroneSoccerPage() {
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Class A (Pro)", desc: "20-40cm diameter, 4S-6S Li-Po" },
-              { title: "Class B (Student)", desc: "20-30cm diameter, 3S-4S Li-Po" },
               { title: "Team Size", desc: "3 - 5 Members per team" },
-              { title: "Arena", desc: "10m x 5m x 5m Netted Bowl" },
-              { title: "Identification", desc: "Striker (Red) | Blockers (Blue)" },
-              { title: "Tournament", desc: "Scrutiny > Challenge > Arena Chaos" }
+              { title: "Arena", desc: "10m x 5m x 5m Netted Arena, 2m high goal hoops" },
+              { title: "Identification", desc: "Striker (Red) | Blockers (Blue/Green)" },
+              { title: "Tournament", desc: "Scrutiny > Skill Challenge > Arena Chaos" },
+              { title: "Power Supply", desc: "220V with UPS for scoring and FPV systems" },
+              { title: "Location", desc: "NIT Hamirpur Campus" }
             ].map((item, i) => (
               <div key={i} className="bg-white/[0.02] border border-white/5 p-6 hover:border-[#FF9FFC]/30 transition-colors group">
                 <h3 className="text-[#FF9FFC] font-mono text-sm tracking-widest uppercase mb-2 group-hover:text-[#5227FF] transition-colors">{item.title}</h3>
