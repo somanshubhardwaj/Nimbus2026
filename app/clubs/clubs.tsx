@@ -12,15 +12,15 @@ const TeamsSection = () => {
       name: 'ABRAXAS',
       fullName: 'TEAM ABRAXAS',
       image: '/clubs/abraxas.jpeg',
-      description: 'Creative and Technical Innovation',
+      description: 'Departmental Club of Engineering Physics',
       website: 'https://team-abraxas-2026.vercel.app/'
     },
     {
       id: 2,
       name: 'C HELIX',
       fullName: 'TEAM C HELIX',
-      image: '', // Empty as requested
-      description: 'Chemistry and Molecular Sciences',
+      image: '/clubs/chelix.jpeg',
+      description: 'Departmental Club of Civil Engineering',
       website: 'https://chelix.netlify.app/'
     },
     {
@@ -28,7 +28,7 @@ const TeamsSection = () => {
       name: 'DESIGNOCRATS',
       fullName: 'TEAM DESIGNOCRATS',
       image: '/clubs/designocrats.jpeg',
-      description: 'Design and Aesthetics',
+      description: 'Departmental Club of Architecture',
       website: 'https://design-ocrafts.vercel.app/'
     },
     {
@@ -36,7 +36,7 @@ const TeamsSection = () => {
       name: 'EXE',
       fullName: 'TEAM EXE',
       image: '/teams/exe.jpg',
-      description: 'Executive Technical',
+      description: 'Departmental Club of Computer Science Engineering',
       website: 'https://website-2k26-dzk2.vercel.app/'
     },
     {
@@ -44,15 +44,15 @@ const TeamsSection = () => {
       name: 'HERMATICA',
       fullName: 'TEAM HERMATICA',
       image: '/clubs/hermatica.jpeg',
-      description: 'Mathematics and Logic Society',
+      description: 'Departmental Club of Chemical Engineering',
       website: ''
     },
     {
       id: 6,
       name: 'MATCOM',
       fullName: 'TEAM MATCOM',
-      image: '', // Empty as requested
-      description: 'Mathematics and Computing Society',
+      image: '/clubs/matcom.jpeg',
+      description: 'Departmental Club of Mathematics and Computing Engineering',
       website: 'https://matcom-website.vercel.app/'
     },
     {
@@ -60,7 +60,7 @@ const TeamsSection = () => {
       name: 'MEDEXTROUS',
       fullName: 'TEAM MEDEXTROUS',
       image: '/teams/medex.jpg',
-      description: 'Medical Innovation',
+      description: 'Departmental Club of Mechanical Engineering',
       website: 'https://medextrous-2026.vercel.app/'
     },
     {
@@ -68,7 +68,7 @@ const TeamsSection = () => {
       name: 'METAMORPH',
       fullName: 'TEAM METAMORPH',
       image: '/clubs/metamorph.jpeg',
-      description: 'Material and Metallurgical Engineering',
+      description: 'Departmental Club of Material Science and Engineering',
       website: 'https://teammetamorph.vercel.app/'
     },
     {
@@ -76,7 +76,7 @@ const TeamsSection = () => {
       name: 'OJAS',
       fullName: 'TEAM OJAS',
       image: '/clubs/ojas.jpeg',
-      description: 'Electrical and Electronics Engineering',
+      description: 'Departmental Club of Electrical Engineering',
       website: 'https://team-ojas-nith.vercel.app/'
     },
     {
@@ -84,7 +84,7 @@ const TeamsSection = () => {
       name: 'VIBHAV',
       fullName: 'TEAM VIBHAV',
       image: '/teams/vibhav.jpg',
-      description: 'Vibrant Creation',
+      description: 'Departmental Club of Electronics and Communication Engineering',
       website: 'https://vibhav-nine.vercel.app/'
     }
   ];
@@ -161,24 +161,45 @@ const TeamsSection = () => {
     if (!container) return;
 
     let touchStartY = 0;
+    let touchStartX = 0;
 
     const handleTouchStart = (e: TouchEvent) => {
       touchStartY = e.touches[0].clientY;
+      touchStartX = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      // Prevent native scrolling and overscroll behavior on mobile
+      e.preventDefault();
     };
 
     const handleTouchEnd = (e: TouchEvent) => {
       if (isAnimating) return;
-      const diff = touchStartY - e.changedTouches[0].clientY;
-      if (Math.abs(diff) > 50) {
-        if (diff > 0 && activeIndex < teams.length - 1) goTo(activeIndex + 1);
-        else if (diff < 0 && activeIndex > 0) goTo(activeIndex - 1);
+      
+      const diffY = touchStartY - e.changedTouches[0].clientY;
+      const diffX = touchStartX - e.changedTouches[0].clientX;
+      
+      const absX = Math.abs(diffX);
+      const absY = Math.abs(diffY);
+
+      if (Math.max(absX, absY) > 40) {
+        if (absX > absY) {
+          if (diffX > 0 && activeIndex < teams.length - 1) goTo(activeIndex + 1);
+          else if (diffX < 0 && activeIndex > 0) goTo(activeIndex - 1);
+        } else {
+          if (diffY > 0 && activeIndex < teams.length - 1) goTo(activeIndex + 1);
+          else if (diffY < 0 && activeIndex > 0) goTo(activeIndex - 1);
+        }
       }
     };
 
-    container.addEventListener('touchstart', handleTouchStart, { passive: true });
-    container.addEventListener('touchend', handleTouchEnd, { passive: true });
+    container.addEventListener('touchstart', handleTouchStart, { passive: false });
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    container.addEventListener('touchend', handleTouchEnd, { passive: false });
+    
     return () => {
       container.removeEventListener('touchstart', handleTouchStart);
+      container.removeEventListener('touchmove', handleTouchMove);
       container.removeEventListener('touchend', handleTouchEnd);
     };
   }, [activeIndex, isAnimating, goTo, teams.length]);
@@ -193,7 +214,7 @@ const TeamsSection = () => {
   }, [activeIndex, goTo]);
 
   return (
-    <div ref={containerRef} className="w-full h-screen relative bg-black selection:bg-[#B19EEF] selection:text-white overflow-hidden">
+    <div ref={containerRef} className="w-full h-screen relative bg-black selection:bg-[#B19EEF] selection:text-white overflow-hidden touch-none">
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-40"
         style={{
@@ -266,38 +287,49 @@ const TeamsSection = () => {
             >
               {teams.map((team, index) => (
                 <div key={team.id} className="relative flex-shrink-0 group" style={{ height: IMAGE_HEIGHT, width: IMAGE_WIDTH }}>
-                  <div className={`absolute -inset-3 border-2 transition-all duration-500 rounded-sm ${activeIndex === index
-                    ? 'border-[#B19EEF] opacity-100'
-                    : 'border-transparent opacity-0'
-                    }`}>
-                    <div className="absolute -top-[3px] -left-[3px] w-3 h-3 bg-[#B19EEF]" />
-                    <div className="absolute -top-[3px] -right-[3px] w-3 h-3 bg-[#B19EEF]" />
-                    <div className="absolute -bottom-[3px] -left-[3px] w-3 h-3 bg-[#B19EEF]" />
-                    <div className="absolute -bottom-[3px] -right-[3px] w-3 h-3 bg-[#B19EEF]" />
-                  </div>
-
-                  {team.image ? (
-                    <Image
-                      src={team.image}
-                      alt={team.fullName}
-                      fill
-                      className={`object-cover transition-all duration-700 ease-out ${activeIndex === index
-                        ? 'grayscale-0 border-2 border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] z-20'
-                        : 'grayscale opacity-40 border-2 border-transparent z-10 blur-[2px]'
-                        }`}
-                    />
-                  ) : (
-                    <div className={`w-full h-full bg-gray-900 flex items-center justify-center transition-all duration-700 ${activeIndex === index
-                      ? 'border-2 border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] z-20'
-                      : 'opacity-40 border-2 border-transparent z-10 blur-[2px]'
+                  <Link 
+                    href={team.website || '#'} 
+                    target="_blank"
+                    className={`block w-full h-full cursor-pointer transition-all duration-300 ${
+                      activeIndex === index ? 'pointer-events-auto' : 'pointer-events-none'
+                    } md:pointer-events-none`}
+                    onClick={(e) => {
+                      if (!team.website || activeIndex !== index) e.preventDefault();
+                    }}
+                  >
+                    <div className={`absolute -inset-3 border-2 transition-all duration-500 rounded-sm ${activeIndex === index
+                      ? 'border-[#B19EEF] opacity-100'
+                      : 'border-transparent opacity-0'
                       }`}>
-                      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px)', backgroundSize: '10px 10px' }} />
-                      <span className="text-[#B19EEF] font-bankgothic text-xs tracking-widest opacity-40 uppercase">No Archive Image</span>
+                      <div className="absolute -top-[3px] -left-[3px] w-3 h-3 bg-[#B19EEF]" />
+                      <div className="absolute -top-[3px] -right-[3px] w-3 h-3 bg-[#B19EEF]" />
+                      <div className="absolute -bottom-[3px] -left-[3px] w-3 h-3 bg-[#B19EEF]" />
+                      <div className="absolute -bottom-[3px] -right-[3px] w-3 h-3 bg-[#B19EEF]" />
                     </div>
-                  )}
-                  {activeIndex === index && (
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#B19EEF]/10 to-transparent z-30 pointer-events-none bg-[length:100%_4px]" />
-                  )}
+
+                    {team.image ? (
+                      <Image
+                        src={team.image}
+                        alt={team.fullName}
+                        fill
+                        className={`object-cover transition-all duration-700 ease-out ${activeIndex === index
+                          ? 'grayscale-0 border-2 border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] z-20'
+                          : 'grayscale opacity-40 border-2 border-transparent z-10 blur-[2px]'
+                          }`}
+                      />
+                    ) : (
+                      <div className={`w-full h-full bg-gray-900 flex items-center justify-center transition-all duration-700 ${activeIndex === index
+                        ? 'border-2 border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] z-20'
+                        : 'opacity-40 border-2 border-transparent z-10 blur-[2px]'
+                        }`}>
+                        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px)', backgroundSize: '10px 10px' }} />
+                        <span className="text-[#B19EEF] font-bankgothic text-xs tracking-widest opacity-40 uppercase">No Archive Image</span>
+                      </div>
+                    )}
+                    {activeIndex === index && (
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#B19EEF]/10 to-transparent z-30 pointer-events-none bg-[length:100%_4px]" />
+                    )}
+                  </Link>
                 </div>
               ))}
             </motion.div>

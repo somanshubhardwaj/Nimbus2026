@@ -90,9 +90,33 @@ const TEAM_MEMBERS: TeamMember[] = [
     socials: { linkedin: "#", github: "#", whatsapp: "#" }
   },
   {
+    id: "c7",
+    name: "VISHESH CHADHA",
+    role: "SECRETARY TREASURER",
+    category: "FINAL YEAR",
+    image: "/teamss/final/Visheshchada.jpg",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
+  {
+    id: "c11",
+    name: "DIVYANSHU VERMA",
+    role: "DEPARTMENTAL SECRETARY",
+    category: "FINAL YEAR",
+    image: "/teamss/final/DIVYANSHU VERMA.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  {
+    id: "c10",
+    name: "VARTIKA SINGH",
+    role: "CORE SECRETARY",
+    category: "FINAL YEAR",
+    image: "/teamss/final/VARTIKA SINGH.jpg",
+    socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
+  },
+  {
     id: "c15",
     name: "DIVESH RUSTAGI",
-    role: "SECRETARY",
+    role: "SECRETARY PIXONOIDS",
     category: "FINAL YEAR",
     image: "/teamss/final/Divesh Rustagi.PNG",
     socials: { linkedin: "#", email: "#", whatsapp: "#" }
@@ -100,18 +124,26 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "c6",
     name: "SHAGUN SHARMA",
-    role: "SECRETARY",
+    role: "SECRETARY PIXONOIDS",
     category: "FINAL YEAR",
     image: "/teamss/final/shagunsharma.jpg",
     socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
   },
   {
-    id: "c7",
-    name: "VISHESH CHADHA",
-    role: "SECRETARY TREASURER",
+    id: "c12",
+    name: "DEVESH CHANDRA",
+    role: "SECRETARY DND ",
     category: "FINAL YEAR",
-    image: "/teamss/final/Visheshchada.jpg",
-    socials: { linkedin: "#", whatsapp: "#" }
+    image: "/teamss/final/Devesh Chandra.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  {
+    id: "c13",
+    name: "SAKSHAM SHARMA",
+    role: "SECRETARY PR",
+    category: "FINAL YEAR",
+    image: "/teamss/final/Saksham Sharma.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
   {
     id: "c8",
@@ -130,41 +162,9 @@ const TEAM_MEMBERS: TeamMember[] = [
     socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
   {
-    id: "c10",
-    name: "VARTIKA SINGH",
-    role: "CORE SECRETARY",
-    category: "FINAL YEAR",
-    image: "/teamss/final/VARTIKA SINGH.jpg",
-    socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
-  },
-  {
-    id: "c11",
-    name: "DIVYANSHU VERMA",
-    role: "DEPARTMENTAL SECRETARY",
-    category: "FINAL YEAR",
-    image: "/teamss/final/DIVYANSHU VERMA.jpg",
-    socials: { linkedin: "#", email: "#", whatsapp: "#" }
-  },
-  {
-    id: "c12",
-    name: "DEVESH CHANDRA",
-    role: "SECRETARY",
-    category: "FINAL YEAR",
-    image: "/teamss/final/Devesh Chandra.jpg",
-    socials: { linkedin: "#", email: "#", whatsapp: "#" }
-  },
-  {
-    id: "c13",
-    name: "SAKSHAM SHARMA",
-    role: "SECRETARY",
-    category: "FINAL YEAR",
-    image: "/teamss/final/Saksham Sharma.jpg",
-    socials: { linkedin: "#", email: "#", whatsapp: "#" }
-  },
-  {
     id: "c14",
     name: "EKANSH MAHAJAN",
-    role: "SECRETARY",
+    role: "SECRETARY RESURGENCE ",
     category: "FINAL YEAR",
     image: "/teamss/final/Ekansh Mahajan.jpg",
     socials: { linkedin: "#", email: "#", whatsapp: "#" }
@@ -290,8 +290,8 @@ const TeamsPage = () => {
       />
 
       {/* Back Navigation */}
-      <nav className="relative w-full p-6 z-50 flex justify-between items-center bg-transparent md:pl-[80px]">
-        <Link href="/" className="group flex items-center gap-3 text-white/70 hover:text-[#B19EEF] transition-colors">
+      <nav className="relative w-full p-4 pl-16 z-40 flex justify-between items-center bg-transparent md:p-6 md:pl-[80px] pointer-events-none">
+        <Link href="/" className="group flex items-center gap-3 text-white/70 hover:text-[#B19EEF] transition-colors pointer-events-auto">
           <div className="p-2 border border-white/20 group-hover:border-[#B19EEF]/50 rounded-full bg-black/50 backdrop-blur-md">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
           </div>
