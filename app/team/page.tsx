@@ -35,34 +35,34 @@ interface TeamMember {
 const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "f1",
-    name: "DR. RAJESH KUMAR",
-    role: "FACULTY ADVISOR",
+    name: "H. M SURYAVANSHI",
+    role: "DIRECTOR",
     category: "FACULTY",
-    image: "/nimbuslogoW-01.png",
+    image: "/teamss/faculty/director.jpg",
     socials: { linkedin: "#", email: "#" }
   },
   {
     id: "f2",
-    name: "DR. PRIYA MEHTA",
-    role: "FACULTY CO-ADVISOR",
+    name: "ARCHANA NANAUTY",
+    role: "REGISTRAR",
     category: "FACULTY",
-    image: "/nimbuslogoW-01.png",
+    image: "/teamss/faculty/registrar.png",
     socials: { linkedin: "#", email: "#" }
   },
   {
     id: "f3",
-    name: "DR. AMIT SHARMA",
-    role: "TECHNICAL MENTOR",
+    name: "DR. RAKESH SHARMA",
+    role: "FACULTY INCHARGE",
     category: "FACULTY",
-    image: "/nimbuslogoW-01.png",
+    image: "/teamss/faculty/rakeshFI.png",
     socials: { linkedin: "#", email: "#" }
   },
   {
     id: "f4",
-    name: "DR. SUNITA VERMA",
-    role: "EVENT PATRON",
+    name: "DR. KIRTI",
+    role: "ASSOCIATE FACULTY INCHARGE",
     category: "FACULTY",
-    image: "/nimbuslogoW-01.png",
+    image: "/teamss/faculty/kirtiAFI.jpg",
     socials: { linkedin: "#", email: "#" }
   },
   {
