@@ -8,9 +8,10 @@ import LeftSidebar from '../herosection/LeftSidebar';
 const AboutUs = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
-    { src: "/herosection/section1.jpeg", title: "RC RACING" },
-    { src: "/herosection/section2.jpeg", title: "HOVER CRAFT" },
-    { src: "/herosection/section3.jpeg", title: "ROBOWAR" }
+    { src: "/rcrace/rcrace.jpeg", title: "RC RACE" },
+    { src: "/robowar.jpg", title: "ROBOWAR" },
+    { src: "/abhigya.jpeg", title: "ABHIGYA" },
+    { src: "/hovercraft.jpeg", title: "HOVERCRAFT" }
   ];
 
   useEffect(() => {
