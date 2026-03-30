@@ -75,14 +75,6 @@ const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: "c2",
-    name: "PRATYUSH SRIVASTAVA",
-    role: "VICE PRESIDENT",
-    category: "FINAL YEAR",
-    image: "/teamss/final/Pratyush Srivastava.jpg",
-    socials: { linkedin: "#", email: "#", whatsapp: "#" }
-  },
-  {
-    id: "c3",
     name: "RAHUL PRASAD",
     role: "VICE PRESIDENT",
     category: "FINAL YEAR",
@@ -90,83 +82,91 @@ const TEAM_MEMBERS: TeamMember[] = [
     socials: { linkedin: "#", github: "#", whatsapp: "#" }
   },
   {
-    id: "c7",
+    id: "c3",
+    name: "PRATYUSH SRIVASTAVA",
+    role: "VICE PRESIDENT",
+    category: "FINAL YEAR",
+    image: "/teamss/final/Pratyush Srivastava.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  {
+    id: "c4",
     name: "VISHESH CHADHA",
-    role: "SECRETARY TREASURER",
+    role: "SECRETARY - TREASURY",
     category: "FINAL YEAR",
     image: "/teamss/final/Visheshchada.jpg",
     socials: { linkedin: "#", whatsapp: "#" }
   },
   {
-    id: "c11",
-    name: "DIVYANSHU VERMA",
-    role: "DEPARTMENTAL SECRETARY",
-    category: "FINAL YEAR",
-    image: "/teamss/final/DIVYANSHU VERMA.jpg",
-    socials: { linkedin: "#", email: "#", whatsapp: "#" }
-  },
-  {
-    id: "c10",
-    name: "VARTIKA SINGH",
-    role: "CORE SECRETARY",
-    category: "FINAL YEAR",
-    image: "/teamss/final/VARTIKA SINGH.jpg",
-    socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
-  },
-  {
-    id: "c15",
-    name: "DIVESH RUSTAGI",
-    role: "SECRETARY PIXONOIDS",
-    category: "FINAL YEAR",
-    image: "/teamss/final/Divesh Rustagi.PNG",
-    socials: { linkedin: "#", email: "#", whatsapp: "#" }
-  },
-  {
-    id: "c6",
-    name: "SHAGUN SHARMA",
-    role: "SECRETARY PIXONOIDS",
-    category: "FINAL YEAR",
-    image: "/teamss/final/shagunsharma.jpg",
-    socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
-  },
-  {
-    id: "c12",
-    name: "DEVESH CHANDRA",
-    role: "SECRETARY DND ",
-    category: "FINAL YEAR",
-    image: "/teamss/final/Devesh Chandra.jpg",
-    socials: { linkedin: "#", email: "#", whatsapp: "#" }
-  },
-  {
-    id: "c13",
-    name: "SAKSHAM SHARMA",
-    role: "SECRETARY PR",
-    category: "FINAL YEAR",
-    image: "/teamss/final/Saksham Sharma.jpg",
-    socials: { linkedin: "#", email: "#", whatsapp: "#" }
-  },
-  {
-    id: "c8",
-    name: "ANSHUMAN KANDPAL",
-    role: "CLUB SECRETARY",
-    category: "FINAL YEAR",
-    image: "/teamss/final/ANSHUMAN KANDPAL.jpg",
-    socials: { linkedin: "#", email: "#", whatsapp: "#" }
-  },
-  {
-    id: "c9",
+    id: "c5",
     name: "MOHD OVAIS",
-    role: "CLUB SECRETARY",
+    role: "CLUB SECRETARY - CORE",
     category: "FINAL YEAR",
     image: "/teamss/final/MOHD OVAIS.jpg",
     socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
   {
-    id: "c14",
+    id: "c6",
+    name: "VARTIKA SINGH",
+    role: "CLUB SECRETARY - CORE",
+    category: "FINAL YEAR",
+    image: "/teamss/final/VARTIKA SINGH.jpg",
+    socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
+  },
+  {
+    id: "c7",
+    name: "ANSHUMAN KANDPAL",
+    role: "CLUB SECRETARY - DEPARTMENTAL",
+    category: "FINAL YEAR",
+    image: "/teamss/final/ANSHUMAN KANDPAL.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  {
+    id: "c8",
+    name: "DIVYANSHU VERMA",
+    role: "CLUB SECRETARY - DEPARTMENTAL",
+    category: "FINAL YEAR",
+    image: "/teamss/final/DIVYANSHU VERMA.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  {
+    id: "c9",
+    name: "SHAGUN SHARMA",
+    role: "SECRETARY - MEDIA AND PROMOTIONS",
+    category: "FINAL YEAR",
+    image: "/teamss/final/shagunsharma.jpg",
+    socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
+  },
+  {
+    id: "c10",
+    name: "DIVESH RUSTAGI",
+    role: "SECRETARY - PIXONOIDS",
+    category: "FINAL YEAR",
+    image: "/teamss/final/Divesh Rustagi.PNG",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  {
+    id: "c11",
+    name: "DEVESH CHANDRA",
+    role: "SECRETARY - DESIGN AND DECORATION",
+    category: "FINAL YEAR",
+    image: "/teamss/final/Devesh Chandra.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  {
+    id: "c12",
     name: "EKANSH MAHAJAN",
-    role: "SECRETARY RESURGENCE ",
+    role: "SECRETARY - RESURGENCE",
     category: "FINAL YEAR",
     image: "/teamss/final/Ekansh Mahajan.jpg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
+  },
+  {
+    id: "c13",
+    name: "SAKSHAM SHARMA",
+    role: "SECRETARY - PUBLIC RELATIONS",
+    category: "FINAL YEAR",
+    image: "/teamss/final/Saksham Sharma.jpg",
     socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
   {
@@ -392,25 +392,7 @@ const TeamsPage = () => {
                       {member.role}
                     </p>
 
-                    {/* Social Links */}
-                    <div className="flex gap-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-                      {Object.entries(member.socials)
-                        .filter(([key]) => key !== 'whatsapp' && SOCIAL_ICON_MAP[key])
-                        .map(([key, url]) => {
-                          const IconComponent = SOCIAL_ICON_MAP[key];
-                          return (
-                            <a
-                              key={key}
-                              href={url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:border-[#B19EEF] hover:bg-[#B19EEF]/20 transition-all duration-300"
-                            >
-                              <IconComponent className="w-3.5 h-3.5 text-gray-400 hover:text-white transition-colors" />
-                            </a>
-                          );
-                        })}
-                    </div>
+
                   </div>
                 </div>
                 <div className="absolute top-0 left-0 w-8 h-8 border-l border-t border-white/20 pointer-events-none transition-colors duration-300 group-hover:border-[#B19EEF]" />

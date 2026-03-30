@@ -68,7 +68,7 @@ const RobowarSection = () => {
                             >
                                 <div className="skew-x-[10deg]">
                                     <p className="text-[#B19EEF] font-mono text-[9px] md:text-[10px] tracking-widest uppercase mb-1">Prize Pool</p>
-                                    <p className="text-xl md:text-3xl font-bankgothic text-white drop-shadow-[0_0_10px_rgba(177,158,239,0.8)]">₹1,00,000</p>
+                                    <p className="text-xl md:text-3xl font-bankgothic text-white drop-shadow-[0_0_10px_rgba(177,158,239,0.8)]">₹1,75,000</p>
                                 </div>
                             </motion.div>
 
