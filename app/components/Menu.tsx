@@ -81,10 +81,14 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                 </motion.div>
               ))}
             </div>
-            <div className="absolute bottom-10 left-10 md:left-20 flex gap-4 text-white/30 font-mono text-xs tracking-widest z-10">
+            <div className="absolute bottom-10 left-10 md:left-20 right-10 flex flex-wrap gap-x-4 gap-y-2 text-white/30 font-mono text-[10px] md:text-xs tracking-widest z-10 uppercase items-center">
               <p>NIMBUS 2026</p>
               <span>•</span>
               <p>NIT HAMIRPUR</p>
+              <span>•</span>
+              <Link href="/openexhibition" onClick={onClose} className="hover:text-white transition-colors whitespace-nowrap">OPEN EXHIBITION</Link>
+              <span>•</span>
+              <Link href="/abhigya" onClick={onClose} className="hover:text-white transition-colors whitespace-nowrap">ABHIGYA</Link>
             </div>
           </motion.div>
         </>
