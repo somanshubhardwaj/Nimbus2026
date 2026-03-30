@@ -79,8 +79,8 @@ export default function RobowarPage() {
                   <div className="col-span-1 sm:col-span-2 flex flex-col sm:flex-row sm:justify-between sm:items-start border-b border-[#B19EEF]/20 pb-4 lg:pb-6">
                     <div>
                       <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Combined Prize Pool</div>
-                      <div className="text-2xl lg:text-3xl font-bankgothic text-white drop-shadow-[0_0_15px_rgba(177,158,239,0.5)]">₹1,30,000</div>
-                      <div className="text-[#B19EEF] font-mono text-[10px] mt-2 uppercase tracking-tight">8kg Cat: ₹65,000 | 15kg Cat: ₹65,000</div>
+                      <div className="text-2xl lg:text-3xl font-bankgothic text-white drop-shadow-[0_0_15px_rgba(177,158,239,0.5)]">₹1,75,000</div>
+                      <div className="text-[#B19EEF] font-mono text-[10px] mt-2 uppercase tracking-tight">8kg Cat: ₹87,500 | 15kg Cat: ₹87,500</div>
                     </div>
                   </div>
                   <div>
