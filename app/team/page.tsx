@@ -54,7 +54,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "DR. PAWAN KUMAR",
     role: "DSW",
     category: "FACULTY",
-    image: "/nimbuslogoB-01.png",
+    image: "/teamss/faculty/pawankumar.jpg",
     socials: { linkedin: "#", email: "#" }
   },
   {
