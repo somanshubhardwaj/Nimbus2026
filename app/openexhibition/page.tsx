@@ -30,7 +30,7 @@ export default function OpenExhibitionPage() {
           <div className="inline-block mb-4 px-4 py-1 border border-[#B19EEF]/40 bg-[#B19EEF]/10 text-[#B19EEF] font-mono text-xs tracking-[0.2em] uppercase">
             Innovation & Discovery
           </div>
-          <h1 className="text-6xl sm:text-7xl md:text-8xl font-black uppercase font-bankgothic text-white leading-tight mb-6 drop-shadow-[0_0_50px_rgba(177,158,239,0.3)]">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase font-bankgothic text-white leading-tight mb-6 drop-shadow-[0_0_50px_rgba(177,158,239,0.3)] w-full break-words">
             OPEN<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B19EEF] to-[#FF9FFC]">EXHIBITION</span>
           </h1>

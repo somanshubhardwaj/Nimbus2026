@@ -27,7 +27,7 @@ export default function AbhigyaPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
         >
-          <h1 className="text-5xl sm:text-7xl md:text-9xl font-black uppercase font-bankgothic text-white leading-tight mb-6 drop-shadow-[0_0_50px_rgba(177,158,239,0.3)]">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase font-bankgothic text-white leading-tight mb-6 drop-shadow-[0_0_50px_rgba(177,158,239,0.3)] w-full break-words">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B19EEF] to-[#FF9FFC]">ABHIGYA</span>
           </h1>
           <p className="text-lg md:text-2xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed">
