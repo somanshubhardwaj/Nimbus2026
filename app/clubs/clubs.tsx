@@ -45,7 +45,7 @@ const TeamsSection = () => {
       fullName: 'TEAM HERMETICA',
       image: '/clubs/hermetica.jpeg',
       description: 'Departmental Club of Chemical Engineering',
-      website: ''
+      website: 'https://hermetica-nith.vercel.app/'
     },
     {
       id: 6,
