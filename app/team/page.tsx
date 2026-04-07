@@ -142,7 +142,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "DIVESH RUSTAGI",
     role: "SECRETARY - PIXONOIDS",
     category: "FINAL YEAR",
-    image: "/teamss/final/Divesh Rustagi.PNG",
+    image: "/teamss/final/diveshrustagi.jpg",
     socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
   {
